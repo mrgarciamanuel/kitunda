@@ -1,0 +1,180 @@
+*{
+    font-family:'Roboto'
+}
+
+/* INíCIO Banner: imagens e texto a passar na página inicial*/
+.slogan{
+    font-weight: bold;
+    color: white;
+    font-size: 60px;
+}
+
+#banner-btn1{
+    color: black;
+    background-color: white;
+    border: none;
+  
+}
+#banner-btn2{
+    color: white;
+    background-color: transparent;
+    border: 2px solid white;
+
+}
+
+#banner-btn2:hover{
+    color: black;
+    background-color: white;  
+}
+/*FIM banner*/
+
+/*INíCIO Menu*/
+#menu-principal{
+    background-color: #F95008;
+    border-bottom: 1px solid #D2691E;
+}
+#menu-principal a{
+    color: white;
+    text-decoration: bold;
+    font-size: 18px;
+}
+#btn-pesquisar{
+    color:#2F7A81;
+    border: 1px solid #2F7A81;
+}
+#btn-pesquisar:hover{
+    color: white;
+    border: 1px solid #2F7A81;
+    background-color: #2F7A81;
+}  
+/*FIM Menu*/
+
+
+/*INICIO rodapes*/
+#sticky-footer{
+    background-color: #2F7A81;
+}
+.card-body h4{
+    color: white;
+
+}
+#verBtn{
+    color: black;
+    background-color: white;
+    border:none;
+}
+
+.card-body a:hover{
+    text-decoration: none;
+    color: black;
+}
+
+.card-body a{
+    text-decoration: none;
+    color: black;
+}
+
+#low-footer{
+    background-color: #F95008;
+}
+/*FIM rodapes*/
+
+/*INÍCIO detalhe de produtos*/
+.card-body{
+    background-color: #2F7A81;
+    border: 0;
+}
+
+#card-prod-detail{
+    background-color: #2F7A81;
+    border: 0;
+}
+
+#product-detail-elements{/*depois de colocar a div toda no 
+    centro, é necessário normalizar os seus elementos*/
+    text-align: justify;
+}
+
+/*FIM detalhe de produtos*/
+
+
+.row{
+    margin: 0;
+}
+/*INICIO catalogo de produtos*/
+#product-container{
+    margin-top: 0px;
+    padding: 0px;
+ }
+
+#product-container h4{
+    margin-bottom: 10px;
+ }
+
+#cards-container{
+    display: flex;
+}
+
+#product-container .card{
+    flex: 1 1 0;
+    max-width: 25%;
+    border-radius: 10px;
+    padding: 0;
+    margin: 5px;
+}
+
+#card-body-product{
+    background-color: #81C9D1;
+    border: 0;
+}
+#product-container img{
+    max-height: 330px;
+    border-radius: 10px;
+}
+
+#btn-normal{
+    color:black;
+    border: 1px solid #2F7A81;
+    background-color: white;
+}
+#btn-normal:hover{
+    color: white;
+    border: 1px solid #2F7A81;
+    background-color: #F95008;
+} 
+
+#btn-normal2{
+    color:black;
+    border: 1px solid #2F7A81;
+    background-color: white;
+}
+#btn-normal2:hover{
+    color: white;
+    border: 1px solid #2F7A81;
+    background-color: #2F7A81;
+} 
+/*FIM catalogo de produtos*/
+
+/* INICIO carousel de produtos aleatórios*/
+#carousel-inner-prod{
+    height: 465px;
+    border-bottom: 4px dashed #F95008;
+    margin-bottom: 5px;
+    text-decoration: none;
+}
+
+#caption-img h3, h4{
+    text-decoration: none;
+    color: #F95008;
+    text-shadow: 1px 1px 5px #2F7A81;
+}
+
+#carousel-inner-prod p{
+    margin-bottom: 10px;
+}
+#img-carousel{
+    width: 400px;
+    height: 300%;
+}
+
+/* FIM carousel de produtos aleatórios*/
