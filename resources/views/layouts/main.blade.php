@@ -1,3 +1,17 @@
+<?php
+            use App\Http\Controllers\ProductController;
+            use Illuminate\Support\Facades\Auth;
+            //se o utilizador não estiver autenticado, 
+            //o carrinho estará sempre zerado 
+            $total = 0;
+
+            //se o utilizador estiver logado, será exibido o
+            //número de produtos no seu carrinho
+            if ($user = auth()->user()){
+            $total = ProductController::cartItem();
+            }
+        ?>
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -89,7 +103,7 @@
                             </li>
                             @endguest
 
-                            <li class="nav-item"><a class="nav-link" href="#"><ion-icon name="cart-outline" size="large"></ion-icon></a>
+                            <li class="nav-item"><a class="nav-link" href="#"><ion-icon name="cart-outline" size="large"></ion-icon>{{$total}}</a>
                             </li>
                         </ul>
 

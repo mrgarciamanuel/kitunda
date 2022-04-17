@@ -33,7 +33,7 @@ Route::get('search',
 
 //rota que permite adicionar produtos no carrinho
 Route::post('add_to_cart', 
-[ProductController::class, 'addToCart']);
+[ProductController::class, 'addToCart'])->middleware('auth');
 
 
 Route::get('/contact', function () {

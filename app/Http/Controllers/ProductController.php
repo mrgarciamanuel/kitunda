@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 //importar o model de produtos "Responsável por comunicar com a base de dados"
 use App\Models\Product;
 
+use App\Models\Cart;
+
 class ProductController extends Controller
 {
     //Estas funções são chamadas pelas Rotas em web.php
@@ -57,16 +59,19 @@ class ProductController extends Controller
     }
 
     function addToCart(Request $pedido){
-        //$cart = new Cart();
-        //$user = auth()->user();
-        //$cart->user_id = $user->id;
-        //$cart->user_id = $product->id;
-        
-        /*if ($pedido->session()->has('user')){
-            return "Done!";
-        }else{
-            return redirect ('/login');
-        }
-        */
+        $cart = new Cart;
+        $user = auth()->user();
+        $cart->user_id = $user->id;
+        $cart->product_id = $pedido->product_id;
+        $cart->save();
+        return redirect('show');
+    }
+    static function cartItem(){
+        $user = auth()->user();//verificar autentificação do utilizador
+        $userId = $user->id;//variavel userId recebe o identificador do utilizador
+        //retornar o total de vezes de objetos 
+        //da classe carinho associados a um determinado utilizador
+        return Cart::where('user_id',$userId)->count();
+
     }
 }
