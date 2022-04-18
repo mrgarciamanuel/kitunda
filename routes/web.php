@@ -32,9 +32,13 @@ Route::get('search',
 [ProductController::class, 'search']);
 
 //rota que permite adicionar produtos no carrinho
+//apenas os utilizadores logados poderão ter acesso
 Route::post('add_to_cart', 
 [ProductController::class, 'addToCart'])->middleware('auth');
 
+//rota que permite listar os produtos no carrinho de compras
+Route::get('cartlist', 
+[ProductController::class, 'cartList']);
 
 Route::get('/contact', function () {
     return view('contact');

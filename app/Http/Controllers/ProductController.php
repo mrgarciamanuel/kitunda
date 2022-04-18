@@ -6,7 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 //importar o model de produtos "Responsável por comunicar com a base de dados"
 use App\Models\Product;
-
+use Illuminate\Support\Facades\DB;
 use App\Models\Cart;
 
 class ProductController extends Controller
@@ -73,5 +73,16 @@ class ProductController extends Controller
         //da classe carinho associados a um determinado utilizador
         return Cart::where('user_id',$userId)->count();
 
+    }
+
+    public function cartList(){
+        $user = auth()->user();//verificar autentificação do utilizador
+        $userId = $user->id;//variavel userId recebe o identificador do 
+        $products = DB::table('cart')
+        ->join('products','cart.product_id','=','products.id')
+        ->where('cart.user_id',$userId)
+        ->select('products.*')
+        ->get();
+        return view('cartlist',['products'=>$products]);
     }
 }

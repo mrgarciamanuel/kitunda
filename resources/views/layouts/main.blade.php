@@ -78,33 +78,45 @@
                             <li class="nav-item"><a class="nav-link" href="#">
                                 Contacte-nos</a>
                             </li>
+
+                            <li class="nav-item"><a class="nav-link" href="/cartlist"><ion-icon name="cart-outline" size="large"></ion-icon>{{$total}}</a>
+                            </li> 
                             <!--caso o utilizador seja autentiticado no sistema-->
                             @auth
-                            <li class="nav-item"><a class="nav-link" href="/dashboard">
-                                Minha conta</a>
-                            </li>
-                            <li class="nav-item">
+
+                                <div class="dropdown">
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                Conta
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                    <li><a class="dropdown-item" href="/dashboard">Minha conta</a></li>
+                                    <li class="nav-item">
                                 <form action="/logout" method="POST">
                                     @csrf
                                     <a class="nav-link" href="/logout" 
                                     onclick="event.preventDefault();this.closest('form').submit();">
-                                Sair</a>
+                                Sair da conta</a>
                                 </form>
                             </li>
+                                </ul>
+                                </div>
                             @endauth
                             <!--caso o utilizador não seja autentiticado-->
                             @guest
-                            <li class="nav-item"><a class="nav-link" href="/login">
-                                Entrar</a>
-                            </li>
+                            <div class="dropdown">
+                                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Acesso
+                                </a>
 
-                            <li class="nav-item"><a class="nav-link" href="/register">
-                                Registar</a>
-                            </li>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <li><a class="dropdown-item" href="/login">Login</a></li>
+                                    <li><a class="dropdown-item" href="/register">Registar</a></li>
+                                    
+                                </ul>
+                            </div>
                             @endguest
 
-                            <li class="nav-item"><a class="nav-link" href="#"><ion-icon name="cart-outline" size="large"></ion-icon>{{$total}}</a>
-                            </li>
+                            
                         </ul>
 
                         
