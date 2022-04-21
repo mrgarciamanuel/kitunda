@@ -14,7 +14,7 @@
             @foreach($products as $product)
                 <div class="carousel-item {{$product['id']==1?'active':''}}">
                 <a href="detail/{{$product['id']}}">
-                <img class=""  src="{{$product['gallery']}}" id="img-carousel" alt="{{$product['nome']}}">
+                <img class=""  src="/img/products/{{$product->gallery}}" id="img-carousel" alt="{{$product['nome']}}">
                     <div class="carousel-caption d-none d-md-block" id="caption-img">
                         <h3>{{$product['name']}}</h3>
                         <h4>{{$product['description']}}</h4>
@@ -39,7 +39,7 @@
         <div class="row" id="cards-container">
             @foreach($products as $product)
             <div class="card col-md-3"> 
-                    <img class="#" src="{{$product['gallery']}}">
+                    <img class="#" src="/img/products/{{$product->gallery}}">
                     <div class="card-body" id="card-body-product">
                         <h4 class="#">{{$product['name']}}</h4>
                         <p>{{$product['description']}}</p>

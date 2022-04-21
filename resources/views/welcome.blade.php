@@ -53,15 +53,21 @@
         <div class="row" id="cards-container">
             @foreach($products as $product)
             <div class="card col-md-3"> 
-                    <img class="#" src="{{$product['gallery']}}">
+                    <img class="#" src="/img/products/{{$product->gallery}}">
                     <div class="card-body" id="card-body-product">
                         <h4 class="#">{{$product['name']}}</h4>
                         <p>{{$product['description']}}</p>
                         <p>{{$product['price']}},00 AOA </p>
                     </div>
                 
-                    <br><a href="detail/{{$product['id']}}" class="btn btn-primary" id="btn-normal">Adicionar <ion-icon name="cart-outline" size="small"></ion-icon></a><br>
-                    <a href="detail/{{$product['id']}}" class="btn btn-primary" id="btn-normal2">Ver mais</a>
+                    <br><a href="detail/{{$product['id']}}" class="btn btn-primary" id="btn-normal">Ver detalhes <ion-icon name="cart-outline" size="small"></ion-icon></a><br>
+                    
+                    <form action="/quick_add_to_cart" method="POST">
+                        @csrf
+                        <input type="hidden" name="product_id" value="{{$product['id']}}">
+
+                        <button class="btn btn-primary" id="btn-normal">Comprar agora</button><br>
+                    </form>
             </div>
             @endforeach
         </div>

@@ -18,8 +18,14 @@ use App\Http\Controllers\ProductController;
 //passando como array o controller 'ProductController' e o nome da action 'index'
 Route::get('/', [ProductController::class, 'index']);
 
-//Rota que permite a acriação de produtos 
-Route::get('/create', [ProductController::class, 'create']);
+//Rota que da acesso a página da criação de produtos 
+Route::get('/create', [ProductController::class, 'create'])->middleware('auth');
+
+//rota que adiciona produtos na loja
+//a rota de adicionar produtosna loja só estara disponível 
+//para utilizadores logados
+Route::post('/products', 
+[ProductController::class, 'store'])->middleware('auth');
 
 //Rota que permite a apresentação de produtos 
 Route::get('/detail/{id}', [ProductController::class, 'detail']);
@@ -36,6 +42,11 @@ Route::get('search',
 Route::post('add_to_cart', 
 [ProductController::class, 'addToCart'])->middleware('auth');
 
+//rota que permite adicionar produtos no carrinho sem ver os detalhes
+//apenas os utilizadores logados poderão ter acesso
+Route::post('quick_add_to_cart', 
+[ProductController::class, 'quickAddToCart'])->middleware('auth');
+
 //rota que permite listar os produtos no carrinho de compras
 Route::get('cartlist', 
 [ProductController::class, 'cartList']);
@@ -45,9 +56,9 @@ Route::get('/contact', function () {
 });
 
 //rota criada automaticamente pelo livewire
-//estaá será reponsável por requerir a autenticação do utilizador 
+//está será reponsável por requerir a autenticação do utilizador 
 //antes de entrar na sua dashboard
-//o middleware é um mecanismo que para filtrar os pedidos http, interagem com
+//o middleware é um mecanismo utilizado filtrar os pedidos http, interage com
 //os pedidos antes de chegar aos controllers
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

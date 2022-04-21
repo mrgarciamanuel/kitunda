@@ -66,6 +66,17 @@ class ProductController extends Controller
         $cart->save();
         return redirect('show');
     }
+
+    function quickAddToCart(Request $pedido){
+        $cart = new Cart;
+        $user = auth()->user();
+        $cart->user_id = $user->id;
+        $cart->product_id = $pedido->product_id;
+        $cart->save();
+
+        return ("Produto comprado");
+    }
+
     static function cartItem(){
         $user = auth()->user();//verificar autentificação do utilizador
         $userId = $user->id;//variavel userId recebe o identificador do utilizador
@@ -84,5 +95,39 @@ class ProductController extends Controller
         ->select('products.*')
         ->get();
         return view('cartlist',['products'=>$products]);
+    }
+
+    public function store(Request $pedido){
+        //instanciação do objeto Product através do Model Product que foi chamado em cima
+        $product = new Product;
+        
+        //atributos do objeto criado
+        $product->name = $pedido->name;
+        $product->price = $pedido->price;
+        $product->category = $pedido->category;
+        $product->description = $pedido->description;
+
+        
+        //upload da imagem
+        if ($pedido->hasFile('gallery') && $pedido->file('gallery')->isValid()){
+            //encapsular os dados da imagem em numa variável
+            $galleryPedido = $pedido->gallery;
+            
+            //a extensão da imegem vai receber  o atributo extensão do elemento criande em cima
+            $extension = $galleryPedido->extension();
+
+            //no final o nome da imagem será o nome original + mais tempo atual + a extensão
+            //tudo fica dentro do md5 para criar uma rash
+            $galleryName = md5($galleryPedido->getClientOriginalName().strtotime("now")).".".$extension;
+
+            //guardando a imagem no diretorio do projeto
+            $pedido->gallery->move(public_path('img/products'),$galleryName);
+
+            $product->gallery = $galleryName;
+        }
+        
+        $product->save();
+        
+        return redirect ('show');
     }
 }

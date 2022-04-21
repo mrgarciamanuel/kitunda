@@ -7,7 +7,7 @@
 <div class="card mb-3" style="max-width: 1100px; max-height: 1000px" id="card-prod-detail">
   <div class="row g-0">
     <div class="col-md-4">
-      <img src="{{$product['gallery']}}" class="img-fluid rounded-start" alt="...">
+      <img src="/img/products/{{$product->gallery}}" class="img-fluid rounded-start" alt="...">
     </div>
     <div class="col-md-8" id="product-detail-elements">
       <div class="card-body">
