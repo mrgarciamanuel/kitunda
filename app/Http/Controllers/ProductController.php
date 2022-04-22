@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use Illuminate\Support\Facades\DB;
 use App\Models\Cart;
+use App\Models\Order;
+
 
 class ProductController extends Controller
 {
@@ -121,6 +123,28 @@ class ProductController extends Controller
         ->sum('products.price');//fazer a soma do preço de todos produtos no carrinho
         
         return view ('ordernow',['totPriceCarrinho'=>$totPriceCarrinho]);
+    }
+
+    //função que permite finalizar compra
+    public function orderPlace(Request $pedido){
+        $user = auth()->user();//verificar autentificação do utilizador
+        $userId = $user->id;//variavel userId recebe o identificador do
+        $allCart = Cart::where('user_id',$userId)->get(); //pegando de novo o carrinho cujo id_user seja igual ao id do utilizador
+
+        foreach($allCart as $cart){
+            $order = new Order;
+            $order->product_id=$cart['product_id'];
+            $order->user_id=$cart['user_id'];
+            $order->status="Pendente";
+            $order->payment_method=$pedido->payment;
+            $order->payment_status="Pendente";
+            $order->address=$pedido->address;
+
+            $order->save();
+
+            Cart::where('user_id',$userId)->delete();//esvaziando o carrinho depois de afectuada compra
+        }
+        return redirect("/");
     }
 
     //função responsável por criar novos produtos na loja

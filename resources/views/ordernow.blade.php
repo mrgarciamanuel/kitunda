@@ -42,16 +42,17 @@
   </table>
 </div>
 <div>
-<form action="/action_page.php">
+<form action="/orderplace" method="POST">
+  @csrf
   <div class="form-group">
-    <textarea type="email" id="email"></textarea>
+    <textarea type="address" name="address" placeholder="Digite o seu e-mail" id="email"></textarea>
   </div>
   <div class="form-group">
     <label for="pwd">Metodos de pagamentos:</label><br><br>
-    <input type="radio" name="payment"><span>Multbanco</span><br>
-    <input type="radio" name="payment"><span>Paypal</span><br>
-    <input type="radio" name="payment"><span>Visa</span><br>
-    <input type="radio" name="payment"><span>Mastercard</span><br>
+    <input type="radio" value="cash" name="payment"><span>Multbanco</span><br>
+    <input type="radio" value="cash" name="payment"><span>Paypal</span><br>
+    <input type="radio" value="cash" name="payment"><span>Visa</span><br>
+    <input type="radio" value="cash" name="payment"><span>Mastercard</span><br>
 
   </div>
   <button type="submit" class="btn btn-default">Finalizar compra</button>

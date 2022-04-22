@@ -58,6 +58,9 @@ Route::get('remove_from_cart/{id}',
 //rota que permite concluir compra
 Route::get('ordernow',[ProductController::class,'orderNow']);
 
+//rota que epermite finalizar compra
+Route::post('orderplace',[ProductController::class,'orderPlace']);
+
 Route::get('/contact', function () {
     return view('contact');
 });
