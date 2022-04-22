@@ -40,6 +40,7 @@ class ProductController extends Controller
         //return view('products.show',['products'=>$products]);
     }
 
+    //função que permite aceder aos detalhes de um produto
     function detail($id){
         $product = Product::find($id);
         return view ('products.detail',['product'=>$product]);
@@ -58,15 +59,18 @@ class ProductController extends Controller
         return view('search',['products'=>$product]);
     }
 
+    //função responsável por adicionar produtos no carrinho
     function addToCart(Request $pedido){
         $cart = new Cart;
         $user = auth()->user();
         $cart->user_id = $user->id;
         $cart->product_id = $pedido->product_id;
         $cart->save();
+        $cart_id=$cart->id;
         return redirect('show');
     }
 
+    //função responsável pelas compras rápidas no sistema
     function quickAddToCart(Request $pedido){
         $cart = new Cart;
         $user = auth()->user();
@@ -77,6 +81,7 @@ class ProductController extends Controller
         return ("Produto comprado");
     }
 
+    //função responsável por contabilizar os produtos no carrinho de determinado cliente
     static function cartItem(){
         $user = auth()->user();//verificar autentificação do utilizador
         $userId = $user->id;//variavel userId recebe o identificador do utilizador
@@ -86,6 +91,7 @@ class ProductController extends Controller
 
     }
 
+    //função responável por ver a lista de produtos no carrinho de determinado cliente
     public function cartList(){
         $user = auth()->user();//verificar autentificação do utilizador
         $userId = $user->id;//variavel userId recebe o identificador do 
@@ -104,6 +110,20 @@ class ProductController extends Controller
 
     }
 
+    //função que permite efetuar compras no sistema
+    public function orderNow(){
+        $user = auth()->user();//verificar autentificação do utilizador
+        $userId = $user->id;//variavel userId recebe o identificador do
+        
+        $totPriceCarrinho= $products = DB::table('cart')
+        ->join('products','cart.product_id','=','products.id')
+        ->where('cart.user_id',$userId)
+        ->sum('products.price');//fazer a soma do preço de todos produtos no carrinho
+        
+        return view ('ordernow',['totPriceCarrinho'=>$totPriceCarrinho]);
+    }
+
+    //função responsável por criar novos produtos na loja
     public function store(Request $pedido){
         //instanciação do objeto Product através do Model Product que foi chamado em cima
         $product = new Product;
@@ -137,4 +157,5 @@ class ProductController extends Controller
         
         return redirect ('show');
     }
+    
 }

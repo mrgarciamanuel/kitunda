@@ -55,6 +55,9 @@ Route::get('cartlist',
 Route::get('remove_from_cart/{id}', 
 [ProductController::class, 'removeFromCart']);
 
+//rota que permite concluir compra
+Route::get('ordernow',[ProductController::class,'orderNow']);
+
 Route::get('/contact', function () {
     return view('contact');
 });

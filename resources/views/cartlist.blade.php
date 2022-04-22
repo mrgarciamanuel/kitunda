@@ -7,6 +7,7 @@
     <div>
         <div>
             <h3>Carinho de compras</h1>
+            <a href="/ordernow">Finalizar compra<ion-icon name="checkbox-outline"></ion-icon></a><br><br>
             @foreach($products as $product)
             <div class="">
                 <div class="col-sm-3">
@@ -21,9 +22,11 @@
                 </div>
 
                 <div class="col-sm-3">
-                    <a href="/remove_from_cart/{{$product->cart_id}}">Retirar do cesto</a><br><br>
+                    <a href="/remove_from_cart/{{$product->cart_id}}">Retirar do cesto<ion-icon name="trash"></ion-icon></a><br><br>
                 </div>
             @endforeach 
+            <a href="/ordernow">Finalizar compra<ion-icon name="checkbox-outline"></ion-icon> </a><br><br>
+            
         </div>
     </div>      
 </div>
