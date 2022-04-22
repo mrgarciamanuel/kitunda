@@ -21,8 +21,7 @@
                 </div>
 
                 <div class="col-sm-3">
-                    <button>Adicionar ao carinho</button>
-                    <button>Remover do carrinho</button>
+                    <a href="/remove_from_cart/{{$product->cart_id}}">Retirar do cesto</a><br><br>
                 </div>
             @endforeach 
         </div>

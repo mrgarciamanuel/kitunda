@@ -51,6 +51,10 @@ Route::post('quick_add_to_cart',
 Route::get('cartlist', 
 [ProductController::class, 'cartList']);
 
+//rota que permite remover os produtos no carrinho de compras
+Route::get('remove_from_cart/{id}', 
+[ProductController::class, 'removeFromCart']);
+
 Route::get('/contact', function () {
     return view('contact');
 });
