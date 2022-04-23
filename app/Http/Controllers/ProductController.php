@@ -146,6 +146,21 @@ class ProductController extends Controller
         }
         return redirect("/");
     }
+    
+    //rota que permite mostrar as compras feitas por um utilizador
+    //para tal, é necessário fazer join entre as tablelas orders e produtos
+    public function myOrders(){
+        $user = auth()->user();//verificar autentificação do utilizador
+        $userId = $user->id;//variavel userId recebe o identificador do
+       $orders = DB::table('orders')
+        ->join('products','orders.product_id','=','products.id')
+        ->where('orders.user_id',$userId)
+        ->get();
+
+        //return ("Feito");
+        return view('myorders',['orders'=>$orders]);
+
+    } 
 
     //função responsável por criar novos produtos na loja
     public function store(Request $pedido){

@@ -61,9 +61,15 @@ Route::get('ordernow',[ProductController::class,'orderNow']);
 //rota que epermite finalizar compra
 Route::post('orderplace',[ProductController::class,'orderPlace']);
 
+//rota que permite remover os produtos no carrinho de compras
+Route::get('myorders', 
+[ProductController::class, 'myOrders']);
+
 Route::get('/contact', function () {
     return view('contact');
 });
+
+
 
 //rota criada automaticamente pelo livewire
 //está será reponsável por requerir a autenticação do utilizador 

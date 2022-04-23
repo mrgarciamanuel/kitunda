@@ -84,21 +84,25 @@
                             <!--caso o utilizador seja autentiticado no sistema-->
                             @auth
 
+                                <li class="nav-item"><a class="nav-link" href="myorders">
+                                    Compras</a>
+                                </li>
+
                                 <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                Conta
-                                </button>
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                    <li><a class="dropdown-item" href="/dashboard">Minha conta</a></li>
-                                    <li class="nav-item">
-                                <form action="/logout" method="POST">
-                                    @csrf
-                                    <a class="nav-link" href="/logout" 
-                                    onclick="event.preventDefault();this.closest('form').submit();">
-                                Sair da conta</a>
-                                </form>
-                            </li>
-                                </ul>
+                                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Conta
+                                    </button>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                                        <li><a class="dropdown-item" href="/dashboard">Minha conta</a></li>
+                                        <li class="nav-item">
+                                    <form action="/logout" method="POST">
+                                        @csrf
+                                        <a class="nav-link" href="/logout" 
+                                        onclick="event.preventDefault();this.closest('form').submit();">
+                                    Sair da conta</a>
+                                    </form>
+                                </li>
+                                    </ul>
                                 </div>
                             @endauth
                             <!--caso o utilizador não seja autentiticado-->
