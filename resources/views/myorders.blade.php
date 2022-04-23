@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.userdashboard')
 @section('title','Kitunda - Carrinho de compras')
 @section('content')
 <h1>Minhas compras</h1>

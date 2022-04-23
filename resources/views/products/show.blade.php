@@ -45,7 +45,7 @@
                         <p>{{$product['description']}}</p>
                         <p>{{$product['price']}},00 AOA </p>
                     </div>
-                
+                    
                     <br><a href="detail/{{$product['id']}}" class="btn btn-primary" id="btn-normal">Adicionar <ion-icon name="cart-outline" size="small"></ion-icon></a><br>
                     <a href="detail/{{$product['id']}}" class="btn btn-primary" id="btn-normal2">Ver mais</a>
             </div>

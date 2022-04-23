@@ -162,6 +162,14 @@ class ProductController extends Controller
 
     } 
 
+    //funcção responsável por mostrar ao admin os produtos cadastrados no sistema
+    public function productlist(){
+        $user = auth()->user();
+        //$products = $user->products;
+        $products = Product::all();
+        return view ("productlist",['products'=>$products]); 
+    }
+
     //função responsável por criar novos produtos na loja
     public function store(Request $pedido){
         //instanciação do objeto Product através do Model Product que foi chamado em cima

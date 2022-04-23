@@ -63,10 +63,6 @@
                                 Produtos</a>
                             </li>
 
-                            <li class="nav-item"><a class="nav-link" href="/create">
-                                Criar produto</a>
-                            </li>
-                            
                             <li class="nav-item"><a class="nav-link" href="#">
                                 Como comprar</a>
                             </li>

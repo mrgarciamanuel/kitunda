@@ -65,6 +65,9 @@ Route::post('orderplace',[ProductController::class,'orderPlace']);
 Route::get('myorders', 
 [ProductController::class, 'myOrders']);
 
+//rota que da acesso ao admin o acesso aos produtos cadastrados no sistema
+Route::get('/productlist', [ProductController::class, 'productlist']);
+
 Route::get('/contact', function () {
     return view('contact');
 });
