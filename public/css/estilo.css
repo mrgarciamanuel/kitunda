@@ -116,11 +116,11 @@
 }
 
 #product-container .card{
-    flex: 1 1 0;
+    flex: 1 1 24%;
     max-width: 25%;
     border-radius: 10px;
     padding: 0;
-    margin: 5px;
+    margin: .5px;
 }
 
 #card-body-product{
@@ -178,3 +178,16 @@
 }
 
 /* FIM carousel de produtos aleatórios*/
+
+/* Formatação da flash sms*/
+.msg{
+    background-color: #2F7A81;
+    color: #F95008;
+    border: 1px splid #81C9D1;
+    width: 100px;
+    margin-bottom: 0;
+    text-align: center;
+    padding: 10px;
+
+}
+/* Fim formatação da flash sms*/

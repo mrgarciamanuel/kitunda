@@ -132,8 +132,19 @@
            
         
     <!-- Em content, é onde será alocado todo o conteúdo de cada uma das páginas do nosso site-->
-        @yield('content')
-    
+        
+
+    <main>
+        <div class="container-fluid">
+            <div class="row">
+                @if(session('msg'))
+                    <p class="msg">{{session('msg')}}</p>
+                @endif
+                @yield('content')
+            </div>
+        </div>
+
+    </main>
 
     <!-- INÍCIO RODAPÉ DO SITE COM MENUS-->
         <footer id="sticky-footer" class="flex-shrink-0 py-4 " >
