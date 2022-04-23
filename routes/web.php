@@ -68,6 +68,9 @@ Route::get('myorders',
 //rota que da acesso ao admin o acesso aos produtos cadastrados no sistema
 Route::get('/productlist', [ProductController::class, 'productlist']);
 
+//rota que permite deletar produtos
+Route::delete('/products/{id}', [ProductController::class,'destroy']);
+
 Route::get('/contact', function () {
     return view('contact');
 });

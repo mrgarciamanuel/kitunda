@@ -21,7 +21,15 @@
                     <td><a href="detail/{{$product->id}}">{{$product->name}}</a></td>
                     <td>{{$product->price}}</td>
                     <td>{{$product->category}}</td>
-                    <td><a href="#">Editar</a><a href="#">Deletar</a></td>
+                    <td>
+                        <a href="#" class="btn btn-info edit-btn">Editar</a>
+                        <form action="/products/{{$product->id}}" method="POST">
+                            @csrf
+                            @method('Delete')
+                            <button type="submit" class="btn btn-danger delete-btn">Deletar</button>
+
+                        </form>
+                    </td>
                 </tr>
             @endforeach
             <br><a href="detail/{{$product['id']}}" class="btn btn-primary" id="btn-normal">Criar novo produto <ion-icon name="add-outline"></ion-icon></a><br>

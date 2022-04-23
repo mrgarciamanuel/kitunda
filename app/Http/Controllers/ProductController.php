@@ -170,6 +170,12 @@ class ProductController extends Controller
         return view ("productlist",['products'=>$products]); 
     }
 
+    //função responsável por deletar produtos no sistema
+    public function destroy($id){
+        Product::findOrFail($id)->delete();
+        return redirect('productlist')->with('msg','Produto excluido');
+    }
+
     //função responsável por criar novos produtos na loja
     public function store(Request $pedido){
         //instanciação do objeto Product através do Model Product que foi chamado em cima
