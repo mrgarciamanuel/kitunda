@@ -209,7 +209,7 @@ class ProductController extends Controller
         $product->save();
         
         //retornando a view de produtos e uma flash sms
-        return redirect ('show')->with('msg','Producto adicionado na loja!');
+        return redirect ('productlist')->with('msg','Producto adicionado na loja!');
     }
     
 }

@@ -1,16 +1,16 @@
 <?php
-            use App\Http\Controllers\ProductController;
-            use Illuminate\Support\Facades\Auth;
-            //se o utilizador não estiver autenticado, 
-            //o carrinho estará sempre zerado 
-            $total = 0;
+    use App\Http\Controllers\ProductController;
+    use Illuminate\Support\Facades\Auth;
+    //se o utilizador não estiver autenticado, 
+    //o carrinho estará sempre zerado 
+    $total = 0;
 
-            //se o utilizador estiver logado, será exibido o
-            //número de produtos no seu carrinho
-            if ($user = auth()->user()){
-            $total = ProductController::cartItem();
-            }
-        ?>
+    //se o utilizador estiver logado, será exibido o
+    //número de produtos no seu carrinho
+    if ($user = auth()->user()){
+    $total = ProductController::cartItem();
+    }
+?>
 
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
@@ -43,7 +43,7 @@
         <header id="navbar">
             <nav class="navbar navbar-expand-lg" id="menu-principal">
                 <div class="container" >
-                    <a class="navbar-brand" href="/">KITUNDA</a>
+                    <a class="navbar-brand" id="menu-principal-item-logo" href="/">KITUNDA</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
@@ -55,49 +55,48 @@
                         <!--Fim do formulário da pesquisa de produtos-->  
 
                         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                            <li class="nav-item"><a class="nav-link" href="/">
+                            <li class="nav-item" id="menu-principal-item"><a class="nav-link" href="/">
                                 Página inicial</a>
                             </li>
 
-                            <li class="nav-item"><a class="nav-link" href="/show">
+                            <li class="nav-item" id="menu-principal-item"><a class="nav-link" href="/show">
                                 Produtos</a>
                             </li>
 
-                            <li class="nav-item"><a class="nav-link" href="#">
+                            <li class="nav-item" id="menu-principal-item"><a class="nav-link" href="#">
                                 Como comprar</a>
                             </li>
 
-                            <li class="nav-item"><a class="nav-link" href="#">
+                            <li class="nav-item" id="menu-principal-item"><a class="nav-link" href="#">
                                 Blog</a>
                             </li>
 
-                            <li class="nav-item"><a class="nav-link" href="contact">
+                            <li class="nav-item" id="menu-principal-item"><a class="nav-link" href="contact">
                                 Contacte-nos</a>
+                            </li>
+
+                            <li class="nav-item" id="menu-principal-item"><a class="nav-link" href="about">
+                                Sobre</a>
                             </li>
 
                             <li class="nav-item"><a class="nav-link" href="/cartlist"><ion-icon name="cart-outline" size="large"></ion-icon>{{$total}}</a>
                             </li> 
                             <!--caso o utilizador seja autentiticado no sistema-->
                             @auth
-
-                                <li class="nav-item"><a class="nav-link" href="myorders">
-                                    Compras</a>
-                                </li>
-
-                                <div class="dropdown">
+                                <div class="dropdown" id="dropdown-menu-principal">
                                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                     Conta
                                     </button>
-                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                        <li><a class="dropdown-item" href="/dashboard">Minha conta</a></li>
-                                        <li class="nav-item">
-                                    <form action="/logout" method="POST">
-                                        @csrf
-                                        <a class="nav-link" href="/logout" 
-                                        onclick="event.preventDefault();this.closest('form').submit();">
-                                    Sair da conta</a>
-                                    </form>
-                                </li>
+                                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" id="dropdown-1">
+                                        <li><a class="dropdown-item"  href="/dashboard" id="dropdown-1-items">Minha conta</a></li>
+                                        <li class="nav-item" id="dropdown-2-items">
+                                            <form action="/logout" method="POST">
+                                                @csrf
+                                                <li><a class="nav-link" href="/logout" 
+                                                onclick="event.preventDefault();this.closest('form').submit();">
+                                            Sair da conta</a></li>
+                                            </form>
+                                        </li>
                                     </ul>
                                 </div>
                             @endauth
@@ -149,12 +148,12 @@
                     <div class="car">
                         <div class="card-body">
                             <h4 class="card-title">Links úteis</h4>
-                            <h6 class="card-item"><a href="#">Página inicial</a></h6>
+                            <h6 class="card-item"><a href="/">Página inicial</a></h6>
                             <h6 class="card-item"><a href="#">Blog</a></h6>
                             <h6 class="card-item"><a href="#">Sobre</a></h6>
-                            <h6 class="card-item"><a href="#">Conta</a></h6>
-                            <h6 class="card-item"><a href="#">Saco de compras</a></h6>
-                            <h6 class="card-item"><a href="#">Conta-tos</a></h6>
+                            <h6 class="card-item"><a href="dasboard">Conta</a></h6>
+                            <h6 class="card-item"><a href="cartlist">Saco de compras</a></h6>
+                            <h6 class="card-item"><a href="contact">Conta-tos</a></h6>
                         </div>
                     </div>
                 </div>

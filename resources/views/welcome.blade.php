@@ -49,11 +49,12 @@
                 <div class="col-md-12" id="product-container">
         
      <!--Container de produtos-->
+
     <h1>Nossos produtos</h1>
         <div class="row" id="cards-container">
             @foreach($products as $product)
             <div class="card col-md-4"> 
-                    <img class="#" src="/img/products/{{$product->gallery}}">
+                    <img class="#" id="img-prod-item" src="/img/products/{{$product->gallery}}">
                     <div class="card-body" id="card-body-product">
                         <h4 class="#">{{$product['name']}}</h4>
                         <p>{{$product['description']}}</p>

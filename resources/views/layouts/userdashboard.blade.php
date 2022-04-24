@@ -61,26 +61,26 @@
                                 </li>
                                 
                                 <!-- Example split danger button -->
-                                <div class="btn-group">
-                                <button type="button" class="btn btn-danger">Opções</button>
-                                <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <span class="visually-hidden">Toggle Dropdown</span>
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li><a class="dropdown-item" href="#">Another action</a></li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li class="nav-item">
-                                        <form action="/logout" method="POST">
-                                            @csrf
-                                            <a href="/logout" class="nav-link" 
-                                            onclick="event.preventDefault();
-                                            this.closest('form').submit();">
-                                            Sair
-                                            </a>
-                                        </form>
-                                    </li>
-                                </ul>
+                                <div class="btn-group" id="dropdown-menu-minha-conta">
+                                    <button type="button" class="btn btn-danger" id="dropdown-2-items">Opções</button>
+                                    <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <span class="visually-hidden">Toggle Dropdown</span>
+                                    </button>
+                                    <ul class="dropdown-menu" id="dropdown-2">
+                                        <li><a class="dropdown-item" id="dropdown-2-items" href="#">Action</a></li>
+                                        <li><a class="dropdown-item" id="dropdown-2-items" href="#" >Another action</a></li>
+                                        <li><hr class="dropdown-divider"></li>
+                                        <li class="nav-item">
+                                            <form action="/logout" method="POST">
+                                                @csrf
+                                                <a href="/logout" class="nav-link" 
+                                                onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                                                Sair
+                                                </a>
+                                            </form>
+                                        </li>
+                                    </ul>
                                 </div>
                             @endauth
                         </ul>

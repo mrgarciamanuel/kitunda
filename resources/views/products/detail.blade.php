@@ -4,6 +4,7 @@
 @section('content')
 <br>
 <center>
+  <br>
 <div class="card mb-3" style="max-width: 1100px; max-height: 1000px" id="card-prod-detail">
   <div class="row g-0">
     <div class="col-md-4">
@@ -22,7 +23,7 @@
           <button class="btn btn-primary" id="btn-normal">Adicionar no carrinho</button><br>
         </form>
         <button class="btn btn-primary" id="btn-normal2">Comprar agora</button>
-        <br><br><br><a href="/products/show">Voltar</a>
+        <br><br><br><a href="/show">Voltar</a>
             
     </div>
     </div>

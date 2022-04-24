@@ -32,7 +32,7 @@
                     </td>
                 </tr>
             @endforeach
-            <br><a href="detail/{{$product['id']}}" class="btn btn-primary" id="btn-normal">Criar novo produto <ion-icon name="add-outline"></ion-icon></a><br>
+            <br><a href="create" class="btn btn-primary" id="btn-normal">Criar novo produto <ion-icon name="add-outline"></ion-icon></a><br>
 @else
     <p>Não tem produtos no sistema</p>
     <br><a href="detail/{{$product['id']}}" class="btn btn-primary" id="btn-normal">Criar novo produto <ion-icon name="add-outline"></ion-icon></a><br>
@@ -40,5 +40,5 @@
 
         </tbody>
     </table>
-    <br><a href="detail/{{$product['id']}}" class="btn btn-primary" id="btn-normal2">Criar novo produto <ion-icon name="add-outline"></ion-icon></a><br><br>
+    <br><a href="create" class="btn btn-primary" id="btn-normal2">Criar novo produto <ion-icon name="add-outline"></ion-icon></a><br><br>
 @endsection

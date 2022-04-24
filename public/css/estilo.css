@@ -2,7 +2,7 @@
     font-family:'Roboto'
 }
 
-/* INíCIO Banner: imagens e texto a passar na página inicial*/
+/* Início banner: imagens e texto a passar na página inicial*/
 .slogan{
     font-weight: bold;
     color: white;
@@ -47,6 +47,55 @@
     border: 1px solid #2F7A81;
     background-color: #2F7A81;
 }  
+
+#dropdown-menu-principal button{/*Formatação dos items do dropdown do menu principal*/
+    background-color: #2F7A81;
+}
+
+#dropdown-1{
+    background-color: #2F7A81;
+}
+
+#dropdown-1-items:hover{/*Fim da formatação dos items do dropdown do menu principal*/
+    color: #F95008;
+    background-color: #2F7A81;
+}
+
+#dropdown-menu-minha-conta button{/*Formatação dos items do dropdown do menu da conta do utilizador*/
+    background-color: #2F7A81;
+}
+
+#dropdown-2{
+    background-color: #2F7A81;
+}
+
+#dropdown-2-items:hover{/*Fim da formatação dos items do dropdown do menu da conta do utilizador*/
+    color: #F95008;
+    background-color: #2F7A81;
+}
+
+#menu-principal-item{/*Formatação dos items do menu principal quando passados o mouse*/
+    transition: transform .3s;
+}
+#menu-principal-item:hover{
+    transform:scale(1.1);
+}
+
+#menu-principal-item-logo{
+    font-size: 20px;
+  background: -webkit-linear-gradient(#0000CD, #FFFF00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#menu-principal-item-logo{
+    transition: transform .2s;
+}
+
+#menu-principal-item-logo:hover{/*Fim da formatação dos items do menu principal quando passados o mouse*/
+    transform:scale(1.4);
+}
+
 /*FIM Menu*/
 
 
@@ -121,6 +170,11 @@
     border-radius: 10px;
     padding: 0;
     margin: .5px;
+}
+
+#img-prod-item{
+    width: auto;
+    height: auto;
 }
 
 #card-body-product{
