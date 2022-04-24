@@ -71,7 +71,7 @@
                                 Blog</a>
                             </li>
 
-                            <li class="nav-item"><a class="nav-link" href="#">
+                            <li class="nav-item"><a class="nav-link" href="contact">
                                 Contacte-nos</a>
                             </li>
 

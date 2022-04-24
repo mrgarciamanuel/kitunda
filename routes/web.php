@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 //importar o controler de productos
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\FormController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -71,9 +72,11 @@ Route::get('/productlist', [ProductController::class, 'productlist']);
 //rota que permite deletar produtos
 Route::delete('/products/{id}', [ProductController::class,'destroy']);
 
-Route::get('/contact', function () {
-    return view('contact');
-});
+//rota que permite contacto
+Route::get('/contact',[FormController::class,'contact']);
+
+Route::post('/contact', 
+[FormController::class, 'store']);
 
 
 
