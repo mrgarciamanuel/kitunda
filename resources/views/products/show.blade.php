@@ -17,7 +17,7 @@
                 <img class=""  src="/img/products/{{$product->gallery}}" id="img-carousel" alt="{{$product['nome']}}">
                     <div class="carousel-caption d-none d-md-block" id="caption-img">
                         <h3>{{$product['name']}}</h3>
-                        <h4>{{$product['description']}}</h4>
+                        <h4>Descrição {{$product['description']}}</h4>
                     </div>
                 </a>
                 </div>
@@ -42,6 +42,7 @@
                     <img class="#" src="/img/products/{{$product->gallery}}">
                     <div class="card-body" id="card-body-product">
                         <h4 class="#">{{$product['name']}}</h4>
+                        <h6>{{$product['category_id']}}</h6>
                         <p>{{$product['description']}}</p>
                         <p>{{$product['price']}},00 AOA </p>
                     </div>

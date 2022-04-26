@@ -17,7 +17,8 @@ class ProductController extends Controller
     //função responsável por mostrar a página inicial do site 
     public function index(){
         //chamando todos produtos para a view
-        $products = Product::all();
+        //$products = Product::all();
+        $products = Product::with('category')->get();
 
         //mostrar todos produtos que colocamos na variável products
         return view ("welcome",['products'=>$products]);
@@ -37,7 +38,7 @@ class ProductController extends Controller
         //mostrar todos produtos que colocamos na variável products
         //return view ("products.show",['products'=>$products]);
 
-        $product = Product::all();
+        $product = Product::all();//'category' faz referência ao nome da relação criada no Model
         return view('products.show', ['products'=>$product]);
         //return view('products.show',['products'=>$products]);
     }

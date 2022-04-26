@@ -57,6 +57,7 @@
                     <img class="#" id="img-prod-item" src="/img/products/{{$product->gallery}}">
                     <div class="card-body" id="card-body-product">
                         <h4 class="#">{{$product['name']}}</h4>
+                        <h6>{{$product->category_id}}</h6>
                         <p>{{$product['description']}}</p>
                         <p>{{$product['price']}},00 AOA </p>
                     </div>

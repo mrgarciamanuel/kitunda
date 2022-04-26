@@ -16,6 +16,7 @@
         <h5>Qtd: 1 Kg</h5>
         <h3>Preço: {{$product['price']}},00 AOA</h3>
         <h5>Decrição: {{$product['description']}}</h5>
+        <h5>Categoria: {{$product->category}}</h5>
         
         <form action="/add_to_cart" method="POST">
           @csrf
