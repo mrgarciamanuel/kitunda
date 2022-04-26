@@ -1,5 +1,5 @@
 <!--Extendendo para está página o layout que está em main-->
-@extends('layouts.main')
+@extends('layouts.userdashboard')
 @section('title','Kitunda - Criar produtos')
 @section('content')
 <h1>Criação de produtos</h1>
@@ -16,7 +16,7 @@
             <label>Preço:</label>
             <input type="text" name="price" class="/form-control" id="title" placeholder="Preço"><br><br>
 
-            <label>Categoria:</label>
+            <label>Categorias:</label>
             <input type="text" name="category" class="/form-control" id="title" placeholder="Categoria"><br><br>
 
             <label>Descrição:</label>

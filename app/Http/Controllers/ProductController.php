@@ -184,8 +184,8 @@ class ProductController extends Controller
         //atributos do objeto criado
         $product->name = $pedido->name;
         $product->price = $pedido->price;
-        $product->category = $pedido->category;
         $product->description = $pedido->description;
+        $product->category_id = $pedido->category_id;
 
         
         //upload da imagem
