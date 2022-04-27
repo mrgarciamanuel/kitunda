@@ -28,6 +28,26 @@
 }
 /*FIM banner*/
 
+
+/*Formatação dos elementos da página inicial*/
+#products-title{
+    text-align: center;
+    margin: 30px 0px 20px 0px;
+}
+
+#linha-horizontal-index{
+    width: 13% ;
+    height: 1.5px;
+    margin: auto auto 30px auto  !important; 
+}
+
+#linha-horizontal-show{
+    width: 70% ;
+    height: 1.9px;
+    margin: auto auto 30px auto  !important; 
+}
+/*FIM da Formatação dos elementos da página inicial*/
+
 /*INíCIO Menu*/
 #menu-principal{
     background-color: #F95008;
@@ -42,6 +62,23 @@
     color:#2F7A81;
     border: 1px solid #2F7A81;
 }
+
+#btn-laranja{
+    color: white;
+    border: 1px solid #2F7A81;
+    background-color: #F95008;
+    border: 2 solid #2F7A81;
+    border-radius: 4px;
+}
+
+#btn-laranja:hover{
+    color: white;
+    border: 1px solid #2F7A81;
+    background-color: #2F7A81;
+    border: 2 solid #2F7A81;
+    border-radius: 4px;
+}
+
 #btn-pesquisar:hover{
     color: white;
     border: 1px solid #2F7A81;
@@ -126,6 +163,11 @@
 #low-footer{
     background-color: #F95008;
 }
+
+#lowfooter-div{
+    margin: 0px 0px 0px 0px;
+}
+
 /*FIM rodapes*/
 
 /*INÍCIO detalhe de produtos*/
@@ -156,6 +198,12 @@
     padding: 0px;
  }
 
+#product-title-show{
+    color: #2F7A81;
+    margin-top: 50px;
+}
+
+ /*
 #product-container h4{
     margin-bottom: 10px;
  }
@@ -163,13 +211,14 @@
 #cards-container{
     display: flex;
 }
-
+*/
 #product-container .card{
     flex: 1 1 24%;
     max-width: 25%;
     border-radius: 10px;
     padding: 0;
     margin: .5px;
+    margin-bottom: 20px;
 }
 
 #img-prod-item{
@@ -190,7 +239,24 @@
     color:black;
     border: 1px solid #2F7A81;
     background-color: white;
+    margin-bottom: 5px;
+    margin-top: 5px;
 }
+
+#btn-normal1{
+    color:white;
+    border: 1px solid #2F7A81;
+    background-color: #2F7A81;
+    margin-bottom: 3px;
+    margin-top: 3px;
+}
+
+#btn-normal1:hover{
+    color: white;
+    border: 1px solid #2F7A81;
+    background-color: #338f99;
+} 
+
 #btn-normal:hover{
     color: white;
     border: 1px solid #2F7A81;
@@ -211,17 +277,19 @@
 
 /* INICIO carousel de produtos aleatórios*/
 #carousel-inner-prod{
-    height: 465px;
-    border-bottom: 4px dashed #F95008;
-    margin-bottom: 5px;
+    height: 440px;
+    margin-bottom: 0px;
     text-decoration: none;
 }
 
+
+/*
 #caption-img h3, h4{
     text-decoration: none;
     color: #F95008;
     text-shadow: 1px 1px 5px #2F7A81;
 }
+*/
 
 #carousel-inner-prod p{
     margin-bottom: 10px;
@@ -229,6 +297,10 @@
 #img-carousel{
     width: 400px;
     height: 300%;
+}
+
+#carrousel-show{
+    background-color: red;
 }
 
 /* FIM carousel de produtos aleatórios*/
@@ -245,3 +317,59 @@
 
 }
 /* Fim formatação da flash sms*/
+
+/*Formatação dos elementos div interface e elementos da lateral da view contacto*/
+#interface{
+    display: block;
+    width: 40%;
+    float: left;
+    border-right: 1px solid #808080;
+}
+#lateral{
+    display: block;
+    width: 60%;
+    float: right;
+}
+#corpo{
+    width: 100%;
+}
+
+#kitundaperson{
+    width: 100%;
+    height: 100%;
+}
+#formulario-contact{
+    margin-left: 10px;
+}
+
+#contact-title{
+    text-align: center;
+    margin: 40px 0px 5px 0px;
+    color: #136168;
+}
+
+/*FIM Formatação dos elementos div interface e elementos da lateral da view contacto*/
+
+#icones-front{
+    color: #136168;
+}
+#icones-detail{
+    color: #08545c;
+}
+/*Formatação do icone no menu principal que se adequa ao dispositivo utilizado pelo utilizadior*/
+#item-menu-botao{
+    color: #08545c;
+    background-color: #d0470c;;
+}
+
+#item-menu-botao1{
+    color: #ff0606;
+    background-color: #d0470c;
+}
+
+/*FIM da Formatação do icone no menu principal que se adequa ao dispositivo utilizado pelo utilizadior*/
+
+#indicador-carousel1, #indicador-carousel2, #indicador-carousel3{
+    color: #F95008;
+}
+

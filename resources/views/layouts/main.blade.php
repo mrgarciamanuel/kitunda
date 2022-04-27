@@ -44,9 +44,8 @@
             <nav class="navbar navbar-expand-lg" id="menu-principal">
                 <div class="container" >
                     <a class="navbar-brand" id="menu-principal-item-logo" href="/">KITUNDA</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <button class="navbar-toggler" id="item-menu-botao" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon" id="item-menu-botao1"></span></button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
                         <!--Inicio do formulário da pesquisa de produtos-->
                         <form action="search" class="d-flex">
                             <input class="form-control me-2" name="query" type="search" placeholder="Procurar produtos" aria-label="Search">
@@ -88,13 +87,13 @@
                                     Conta
                                     </button>
                                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" id="dropdown-1">
-                                        <li><a class="dropdown-item"  href="/dashboard" id="dropdown-1-items">Minha conta</a></li>
+                                        <li><a class="dropdown-item" href="/dashboard" id="dropdown-1-items">Minha conta</a></li>
                                         <li class="nav-item" id="dropdown-2-items">
                                             <form action="/logout" method="POST">
                                                 @csrf
                                                 <li><a class="nav-link" href="/logout" 
                                                 onclick="event.preventDefault();this.closest('form').submit();">
-                                            Sair da conta</a></li>
+                                            Sair</a></li>
                                             </form>
                                         </li>
                                     </ul>
@@ -188,8 +187,8 @@
         
         <!-- INÍCIO RODAPÉ FINAL DO SITE-->
         <footer id="low-footer">            
-                <div class="container text-center">
-                    <br><small>Kitunda Copyright &copy; 2022</small>
+                <div class="container text-center" >
+                    <br><small id="lowfooter-div">Kitunda Copyright &copy; 2022</small><br><br>
                 </div>
         </footer>
         <!-- FIM RODAPÉ FINAL DO SITE-->

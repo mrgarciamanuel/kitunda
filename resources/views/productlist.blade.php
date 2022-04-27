@@ -20,7 +20,7 @@
                     <td scropt="row">{{$loop->index +1}}</td> 
                     <td><a href="detail/{{$product->id}}">{{$product->name}}</a></td>
                     <td>{{$product->price}}</td>
-                    <td>{{$product->category}}</td>
+                    <td>{{$product->category->name}}</td>
                     <td>
                         <a href="#" class="btn btn-info edit-btn">Editar</a>
                         <form action="/products/{{$product->id}}" method="POST">
