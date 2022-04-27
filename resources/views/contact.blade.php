@@ -25,9 +25,9 @@
                                 
                                 <p><ion-icon name="time-outline"></ion-icon> Segunda a sexta: 09:00 até as 18:00</p>
                                 <p>Siga-nos nas redes socias</p>
-                                <a href="https://www.facebook.com/Garciaisaiasmanuel"><ion-icon name="logo-facebook" size="small"></ion-icon></a>
-                                <a href="https://www.instagram.com/mr_garcia_manuel/"><ion-icon name="logo-linkedin" size="small"></ion-icon></a>
-                                <a href="https://twitter.com/mrgarciamannuel"><ion-icon name="logo-instagram" size="small"></ion-icon></a>
+                                <a href="https://www.facebook.com/Garciaisaiasmanuel" target="_blank" ><ion-icon name="logo-facebook" size="small"></ion-icon></a>
+                                <a href="https://www.instagram.com/mr_garcia_manuel/" target="_blank" ><ion-icon name="logo-linkedin" size="small"></ion-icon></a>
+                                <a href="https://twitter.com/mrgarciamannuel" target="_blank"><ion-icon name="logo-instagram" size="small"></ion-icon></a>
                                
 
                             </div>

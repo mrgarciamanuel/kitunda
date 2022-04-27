@@ -31,8 +31,11 @@ Route::post('/products',
 //Rota que permite a apresentação de produtos 
 Route::get('/detail/{id}', [ProductController::class, 'detail']);
 
-//Rota que aos detalhes de cada produto 
+//Rota que permitr aceder aos detalhes de cada produto 
 Route::get('/show', [ProductController::class, 'show']);
+
+//Rota que permitr aceder a página de contactos 
+Route::get('/about', [ProductController::class, 'about']);
 
 //rota para pesquisa de produtos
 Route::get('search', 

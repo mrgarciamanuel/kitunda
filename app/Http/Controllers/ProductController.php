@@ -46,7 +46,7 @@ class ProductController extends Controller
     //função que permite aceder aos detalhes de um produto
     function detail($id){
         $product = Product::find($id);
-        return view ('products.detail',['product'=>$product]);
+        return view ('detail',['product'=>$product]);
     }
 
     //função para pesquisa de produtos
@@ -60,6 +60,10 @@ class ProductController extends Controller
         input('query').'%')->get();
 
         return view('search',['products'=>$product]);
+    }
+
+    public function about(){
+        return view('about');
     }
 
     //função responsável por adicionar produtos no carrinho
