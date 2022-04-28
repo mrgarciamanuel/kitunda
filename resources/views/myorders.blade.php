@@ -1,7 +1,8 @@
 @extends('layouts.userdashboard')
 @section('title','Kitunda - Carrinho de compras')
 @section('content')
-<h1>Minhas compras</h1>
+<h1 id="products-title">Minhas compras</h1>
+<hr id="linha-horizontal-index">
 <div class="carousel-inner">
     
     @foreach($orders as $pedido)

@@ -27,7 +27,7 @@
 
 <h1 id="products-title">Sobre o Kitunda</h1>
 <hr id="linha-horizontal-index">
-<div class="card mb-3">
+<div class="card mb-3" >
   <img src="..." class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">Quem somos</h5>
@@ -56,40 +56,46 @@ Com uma estrutura B2C, espera-se corresponder à procura do consumidor angolano 
 </div>
 
 <h1 id="products-title">Conheça a nossa equipa</h1>
-<div class="row row-cols-1 row-cols-md-3 g-4">
+<div class="row row-cols-1 row-cols-md-3 g-4" id="car-team">
+  <div class="col">
+    <div class="card h-100" >
+      <img src="/img/myself.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">CO-FOUNDER/CEO</h5>
+        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+      <div class="card-footer">
+        <a href="https://www.facebook.com/Garciaisaiasmanuel" target="_blank" ><ion-icon name="logo-facebook" size="small"></ion-icon></a>
+        <a href="https://www.instagram.com/mr_garcia_manuel/" target="_blank" ><ion-icon name="logo-linkedin" size="small"></ion-icon></a>
+        <a href="https://twitter.com/mrgarciamannuel" target="_blank"><ion-icon name="logo-instagram" size="small"></ion-icon></a>
+      </div>
+    </div>
+  </div>
   <div class="col">
     <div class="card h-100">
       <img src="/img/myself.jpg" class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      </div>
-      <div class="card-footer">
-        <small class="text-muted">Last updated 3 mins ago</small>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card h-100">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
+        <h5 class="card-title">CO-FOUNDER/CFO</h5>
         <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
       </div>
       <div class="card-footer">
-        <small class="text-muted">Last updated 3 mins ago</small>
+        <a href="https://www.facebook.com/Garciaisaiasmanuel" target="_blank" ><ion-icon name="logo-facebook" size="small"></ion-icon></a>
+        <a href="https://www.instagram.com/mr_garcia_manuel/" target="_blank" ><ion-icon name="logo-linkedin" size="small"></ion-icon></a>
+        <a href="https://twitter.com/mrgarciamannuel" target="_blank"><ion-icon name="logo-instagram" size="small"></ion-icon></a>
       </div>
     </div>
   </div>
   <div class="col">
     <div class="card h-100">
-      <img src="..." class="card-img-top" alt="...">
+      <img src="/img/myself.jpg" class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
+        <h5 class="card-title">Founder - SEO</h5>
         <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
       </div>
       <div class="card-footer">
-        <small class="text-muted">Last updated 3 mins ago</small>
+        <a href="https://www.facebook.com/Garciaisaiasmanuel" target="_blank" ><ion-icon name="logo-facebook" size="small"></ion-icon></a>
+        <a href="https://www.instagram.com/mr_garcia_manuel/" target="_blank" ><ion-icon name="logo-linkedin" size="small"></ion-icon></a>
+        <a href="https://twitter.com/mrgarciamannuel" target="_blank"><ion-icon name="logo-instagram" size="small"></ion-icon></a>
       </div>
     </div>
   </div>

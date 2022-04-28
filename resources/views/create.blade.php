@@ -2,9 +2,10 @@
 @extends('layouts.userdashboard')
 @section('title','Kitunda - Criar produtos')
 @section('content')
-<h1>Criação de produtos</h1>
+<h1 id="products-title">Criação de produtos</h1>
+<hr id="linha-horizontal-index">
 <div>
-<form action="/products" method="POST" enctype="multipart/form-data">
+    <form action="/products" method="POST" enctype="multipart/form-data">
         @csrf
         <div>
             <label for="gallery">Imagem do Producto:</label>

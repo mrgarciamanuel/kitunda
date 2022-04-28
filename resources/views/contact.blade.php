@@ -21,7 +21,7 @@
                                 <h6>Entre em contacto com a nossa equipa</h6>
                                 <p><ion-icon name="call-outline"></ion-icon>+251 923 123 456</p>
 
-                                <p><ion-icon name="location-outline"></ion-icon>Avenida Conego Manuel das Neves, Nº 192, Bairro Maianga, Luanda-Angola</p>
+                                <p><ion-icon name="location-outline"></ion-icon>Avenida Conego Manuel das Neves, Nº 192, Bairro Maianga, Luanda-Angola <i class="flag flag-angola"></i></p>
                                 
                                 <p><ion-icon name="time-outline"></ion-icon> Segunda a sexta: 09:00 até as 18:00</p>
                                 <p>Siga-nos nas redes socias</p>

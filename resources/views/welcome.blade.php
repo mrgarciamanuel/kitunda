@@ -73,8 +73,9 @@
                         @csrf
                         <input type="hidden" name="product_id" value="{{$product['id']}}">
 
-                        <button class="btn btn-primary" id="btn-normal1">Comprar agora<ion-icon name="cart-outline" size="small"></ion-icon></button>
+                        <button class="btn btn-primary" id="btn-normal1">Comprar agora<ion-icon name="cart-outline" size="small"></ion-icon><i class="bi bi-apple"></i></button>
                     </form>
+                    
                     </center>
             </div>
             @endforeach

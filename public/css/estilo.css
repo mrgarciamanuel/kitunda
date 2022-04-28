@@ -369,9 +369,25 @@
 
 /*FIM da Formatação do icone no menu principal que se adequa ao dispositivo utilizado pelo utilizadior*/
 
+/*Formatação dos indicadores do carrousel */
 #indicador-carousel1, #indicador-carousel2, #indicador-carousel3{
     color: #F95008;
     background-color: #d0470c;
+}
+/*Fim Formatação dos indicadores do carrousel */
+#car-team{
+    margin: 0px 0px 20px 0px;
+}
+
+
+
+#product-sistema{
+    width: 1000px;
+}
+
+#form-product-create{
+    width: 500px;
+    margin: 0px 0px 0px 40px;
 }
 
 
