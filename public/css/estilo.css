@@ -394,4 +394,17 @@
 #acessoloja{
     margin: 0px 10px 0px 0px;
 }
+/*Formatação dos icones / com seus botões*/
+#button-hidden{
+    color: #08545c;
+    border: 1px solid #2F7A81;
+    background-color: #2F7A81;
 
+}
+
+#button-hidden-welcome{
+    color: #08545c;
+    border: 1px solid #81C9D1;
+    background-color: #81C9D1;
+
+}

@@ -62,8 +62,12 @@
                         <p>{{$product['description']}}</p>
                         <p>{{$product['price']}},00 AOA </p>
                         
-                        <a href="$"><ion-icon name="heart" id="icones-front"></ion-icon></a>
-                        <a href="#"><ion-icon name="chatbox-outline" id="icones-front"></ion-icon></a>
+
+                        <form action="/add_to_favo" method="POST">
+                            @csrf
+                            <input type="hidden" name="product_id" value="{{$product['id']}}">
+                            <button id="button-hidden-welcome"><ion-icon name="heart" size="small" id="icones-detail"></ion-icon></button>
+                        </form>                     
                         
                     </div>
                     <center>

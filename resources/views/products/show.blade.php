@@ -45,7 +45,16 @@
                         <h6>{{$product['category->name']}}</h6>
                         <p>{{$product['description']}}</p>
                         <p>{{$product['price']}},00 AOA </p>
+
+                        <form action="/add_to_favo" method="POST">
+                            @csrf
+                            <input type="hidden" name="product_id" value="{{$product['id']}}">
+                            <button id="button-hidden-welcome"><ion-icon name="heart" size="small" id="icones-detail"></ion-icon></button>
+                    </form>
+                    
                     </div>
+
+                    
                     <center>
                     <br><a href="detail/{{$product['id']}}" class="btn btn-primary" id="btn-normal">Adicionar <ion-icon name="cart-outline" size="small"></ion-icon></a><br>
                     <a href="detail/{{$product['id']}}" class="btn btn-primary" id="btn-normal2">Ver mais</a></center><br>

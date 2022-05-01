@@ -20,11 +20,11 @@
         <form action="/add_to_favo" method="POST">
             @csrf
             <input type="hidden" name="product_id" value="{{$product['id']}}">
-            <button>Adicionar aos favoritos</button>
+            <button id="button-hidden"><ion-icon name="heart" size="small" id="icones-detail"></ion-icon></button>
         </form>
 
-        <a href="$"><ion-icon name="heart" size="small" id="icones-detail"></ion-icon></a>
-          <a href="#"><ion-icon name="chatbox-outline" size="small" id="icones-detail"></ion-icon></a>
+        <button id="button-hidden"><ion-icon name="chatbox-outline" size="small" id="icones-detail"></ion-icon></button>
+          
         
         <form action="/add_to_cart" method="POST">
           @csrf
