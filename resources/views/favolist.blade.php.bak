@@ -1,0 +1,16 @@
+@extends('layouts.main')
+@section('title','Kitunda - Favoritos')
+@section('content')
+<h1>Favoritos</h1>
+<div class="carousel-inner">
+    @foreach($products as $product)
+    <div class="">
+        <a href="detail/{{$product->id}}">
+            <h3>{{$product->name}}</h3>
+        </a>   
+            <a class="btn btn-primary" href="detail/{{$product->id}}">Ver detalhes</a><br><br>        
+    </div>
+    @endforeach 
+</div>
+
+@endsection

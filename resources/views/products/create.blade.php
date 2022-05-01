@@ -39,14 +39,16 @@
                     <label class="form-label">Descrição:</label>
                     <input type="text" name="description" id="form4Example2" class="form-control" placeholder="Descrição"><br>
 
-                    <input type="submit" class="btn btn-primary btn-block mb-4" value="Criar">
+                    <input type="submit" class="btn btn-primary btn-block mb-4" id="btn-normal1" value="Criar">
                 </div>
             </form>
         </div>
     </div>
 
     <div id="lateral">
-        <h1></h1>
+        <img src="/img/agrofood.jpg" class="rounded mx-auto d-block" alt="...">
+        <h2 id="products-title">Produtos naturais, frescos e acabados de tirar do campo!</h2>
+        <hr id="linha-horizontal-index">
     </div>
 </div>
 @endsection

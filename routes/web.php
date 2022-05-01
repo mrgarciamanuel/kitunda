@@ -46,6 +46,12 @@ Route::get('search',
 Route::post('add_to_cart', 
 [ProductController::class, 'addToCart'])->middleware('auth');
 
+//rota que adiciona produtos aos favoritos
+//a rota de adicionar produtos aos favoritos só estara disponível 
+//para utilizadores logados
+Route::post('add_to_favo', 
+[ProductController::class, 'addToFavo'])->middleware('auth');
+
 //rota que permite adicionar produtos no carrinho sem ver os detalhes
 //apenas os utilizadores logados poderão ter acesso
 Route::post('quick_add_to_cart', 
@@ -54,6 +60,10 @@ Route::post('quick_add_to_cart',
 //rota que permite listar os produtos no carrinho de compras
 Route::get('cartlist', 
 [ProductController::class, 'cartList']);
+
+//rota que permite listar os produtos nos favoritos de um utilizador
+Route::get('favolist', 
+[ProductController::class, 'favoList'])->middleware('auth');
 
 //rota que permite remover os produtos no carrinho de compras
 Route::get('remove_from_cart/{id}', 
@@ -80,8 +90,6 @@ Route::get('/contact',[FormController::class,'contact']);
 
 Route::post('/contact', 
 [FormController::class, 'store']);
-
-
 
 //rota criada automaticamente pelo livewire
 //está será reponsável por requerir a autenticação do utilizador 

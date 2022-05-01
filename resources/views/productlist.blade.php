@@ -66,5 +66,6 @@
     </table>
     <br><a href="create" class="btn btn-primary" id="btn-normal2">Criar novo produto <ion-icon name="add-outline"></ion-icon></a><br><br>
 
-    </table></center>
+    </table>
+</center>
 @endsection

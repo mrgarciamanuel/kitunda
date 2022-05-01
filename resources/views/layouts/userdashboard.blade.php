@@ -11,9 +11,10 @@
     $total = ProductController::cartItem();
     }
 ?>
+<!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
-    <meta charset="utf-8">
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
         <title>@yield('title')</title>
@@ -31,7 +32,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Roboto+Condensed:wght@400;700&family=Roboto" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Roboto" rel="stylesheet">       
     </head>
-    <body class="antialiased">
+    <body>
         <!--MENU PRINCIPAL DO SITE-->
         <header id="navbar">
             <nav class="navbar navbar-expand-lg" id="menu-principal">
@@ -56,7 +57,7 @@
                                         <a href="/create" class="nav-link">Criar produtos</a>
                                     </li>
                                 @endif
-                                <li class="nav-item"><a class="nav-link" href="/">
+                                <li class="nav-item"><a class="btn btn-outline-success" id="acessoloja" href="/">
                                     Acesso a loja</a>
                                 </li>
                                 
@@ -88,7 +89,16 @@
                 </div>
             </nav>
         </header>
-        @yield('content')
+        <main>
+            <div class="container-fluid">
+                <div class="row">
+                    @if(session('msg'))
+                        <p class="msg">{{session('msg')}}</p>
+                    @endif
+                    @yield('content')
+                </div>
+            </div>
+        </main>
         <!-- INÍCIO RODAPÉ FINAL DO SITE-->
         <footer id="low-footer">            
                 <div class="container text-center">

@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use Illuminate\Support\Facades\DB;
 use App\Models\Cart;
+use App\Models\Favorito;
 use App\Models\Order;
 
 
@@ -75,6 +76,28 @@ class ProductController extends Controller
         $cart->save();
         $cart_id=$cart->id;
         return redirect('show');
+    }
+
+    function addToFavo(Request $pedido){
+        
+        $favoritos = new Favorito;
+        $user = auth()->user();
+        $favoritos->user_id = $user->id;
+        $favoritos->product_id = $pedido->product_id;
+        $favoritos->save();
+        return redirect('show');
+    }
+
+    public function favoList(){
+        //lista de produtos no carrinho com innerjoin
+        $user = auth()->user();//verificar autentificação do utilizador
+        $userId = $user->id;//variavel userId recebe o identificador do
+        $products = DB::table('favoritos')
+        ->join('products','favoritos.product_id','=','products.id')
+        ->where('favoritos.user_id',$userId)
+        ->select('products.*','favoritos.id as cart_id')
+        ->get();
+        return view ('favolist',['products'=>$products]);
     }
 
     //função responsável pelas compras rápidas no sistema

@@ -78,7 +78,11 @@
                                 Sobre</a>
                             </li>
 
-                            <li class="nav-item"><a class="nav-link" href="/cartlist"><ion-icon name="cart-outline" size="large"></ion-icon>{{$total}}</a>
+                            <li class="nav-item" id="menu-principal-item"><a class="nav-link" href="/favolist">
+                            <ion-icon name="heart-outline"></ion-icon></a>
+                            </li>
+
+                            <li class="nav-item"><a class="nav-link" id="menu-principal-item" href="/cartlist"><ion-icon name="cart-outline" size="large"></ion-icon>{{$total}}</a>
                             </li> 
                             <!--caso o utilizador seja autentiticado no sistema-->
                             @auth

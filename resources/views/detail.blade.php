@@ -16,6 +16,13 @@
         <h5>Qtd: 1 Kg</h5>
         <h5 id="product-title-detail">{{$product['description']}}</h5>
         <h5>Categoria: {{$product->category->name}}</h5>
+
+        <form action="/add_to_favo" method="POST">
+            @csrf
+            <input type="hidden" name="product_id" value="{{$product['id']}}">
+            <button>Adicionar aos favoritos</button>
+        </form>
+
         <a href="$"><ion-icon name="heart" size="small" id="icones-detail"></ion-icon></a>
           <a href="#"><ion-icon name="chatbox-outline" size="small" id="icones-detail"></ion-icon></a>
         
