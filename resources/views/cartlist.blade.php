@@ -20,32 +20,62 @@
 @if($total==0)
     <h2>Seu carrinho de compras está vázio, <a href="/show">clique aqui</a> para ver a nossa ementa</h2>
 @else
+<center>
     <div class="carousel-inner">
         <div>
             <div>
-                <h3>Carinho de compras</h1>
-                <a href="/ordernow">Finalizar compra<ion-icon name="checkbox-outline"></ion-icon></a><br><br>
-                @foreach($products as $product)
-                <div class="">
-                    <div class="col-sm-3">
-                    <a href="detail/{{$product->id}}">
-                            <img src="doce_batata1.jpg" alt="{{$product->name}}">
-                        </a>
-                    </div>
+                <h1 id="products-title">Carinho de compras</h1>
+                <hr id="linha-horizontal-index">
+                <a href="/ordernow" class="btn btn-primary" id="btn-normal1"> Finalizar compra</a><br><br>
+                <table class="table align-middle mb-0 bg-white" id="product-sistema">
+                    <thead class="bg-light">
+                        <tr>
+                            <th>Name</th>
+                            <th>Imagem</th>
+                            <th>Preço</th>
+                            <th>Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($products as $product)            
+                        <tr>
+                            <td>
+                                <div class="">
+                                <p class="fw-bold mb-1">{{$product->name}}</p>             
+                                </div>
+                            </td>
 
-                    <div class="">
-                            <h3>{{$product->name}}</h3>
-                            <h4>{{$product->price}}</h4>
-                    </div>
+                            <td>
+                                <div class="">
+                                    <img
+                                    src="/img/products/{{$product->gallery}}"
+                                    alt=""
+                                    style="width: 170px; height: 170px"
+                                    class="rounded-circles"
+                                    />            
+                                </div>
+                            </td>
+                            <td>
+                                <div class="">
+                                    <p class="fw-bold mb-1">{{$product->price}}</p>             
+                                </div>
+                            </td>
 
-                    <div class="col-sm-3">
-                        <a href="/remove_from_cart/{{$product->cart_id}}">Retirar do cesto<ion-icon name="trash"></ion-icon></a><br><br>
-                    </div>
-                @endforeach 
-                <a href="/ordernow">Finalizar compra<ion-icon name="checkbox-outline"></ion-icon> </a><br><br>
+                            <td>
+                                <div class="">
+                                    <a href="/remove_from_cart/{{$product->cart_id}}" class="btn btn-danger">Remover do carrinho</a>             
+                                </div>
+                            </td>
+                        </tr>
+                
+                        @endforeach 
+                </tbody>
+                </table>
+                <a href="/ordernow" class="btn btn-primary" id="btn-normal1"> Finalizar compra</a><br><br>
                 
             </div>
         </div>      
     </div>
+</center>
 @endif
 @endsection

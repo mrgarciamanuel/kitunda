@@ -17,7 +17,8 @@
 @section('title','Kitunda - Ver produtos')
 @section('content')
 
-<h1>Carrinho</h1>
+<h1 id="products-title">Carinho</h1>
+<hr id="linha-horizontal-index">
 <div>
 <table class="table table-bordered">
     <tbody>

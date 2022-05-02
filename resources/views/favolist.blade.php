@@ -9,36 +9,37 @@
         <table class="table align-middle mb-0 bg-white" id="product-sistema">
             <thead class="bg-light">
                 <tr>
-                <th>Name</th>
-                <th>Categoria</th>
-                <th>Ação</th>
+                    <th>Name</th>
+                    <th>Categoria</th>
+                    <th>Ação</th>
                 </tr>
             </thead>
             <tbody>
-            @foreach($products as $product)
-            <tr>
-                <td>
-                <div class="d-flex align-items-center">
-                    <img
-                        src="/img/products/{{$product->gallery}}"
-                        alt=""
-                        style="width: 45px; height: 45px"
-                        class="rounded-circle"
-                        />
-                    <div class="">
-                        <p class="fw-bold mb-1">{{$product->name}}</p> 
-                                    
-                    </div>
-                </td>
-                <td>
-                    <p>{{$product->category_id}}</p>
-                </td>
+                @foreach($products as $product)
+                <tr>
+                    <td id="nome e imagem dos produtos">
+                        <div class="d-flex align-items-center">
+                            <img
+                                src="/img/products/{{$product->gallery}}"
+                                alt=""
+                                style="width: 45px; height: 45px"
+                                class="rounded-circle"
+                                />
+                        <div class="">
+                            <p class="fw-bold mb-1">{{$product->name}}</p> 
+                                        
+                        </div>
+                    </td>
+                    <td id="categoria dos produtos">
+                        <p>{{$product->category_id}}</p>
+                    </td>
 
-                <td>
-                    <a class="btn btn-primary" href="detail/{{$product->id}}">Ver detalhes</a><br><br>
-                </td>    
-            </tr>
-            @endforeach 
+                    <td id="ação dos produtos">
+                        <a class="btn btn-primary" id="btn-normal" href="detail/{{$product->id}}">Ver detalhes</a><br><br>
+                    </td>    
+                </tr>
+                @endforeach
+            </tbody> 
         </table>
     </center>
 </div>
