@@ -56,9 +56,7 @@ class ProductController extends Controller
     //função para pesquisa de produtos
     //request foi importado em cima
     function search(Request $pedido){
-
-        //$auxiliar = request('query');
-
+        $pesquisado =  request('query');
         $product=Product::
         where('name','like','%'.$pedido->
         input('query').'%')->get();

@@ -58,8 +58,8 @@
                                 Página inicial</a>
                             </li>
 
-                            <li class="nav-item" id="menu-principal-item"><a class="nav-link" href="/show">
-                                Produtos</a>
+                            <li class="nav-item" id="menu-principal-item">
+                                <a class="nav-link" href="/show">Produtos</a>
                             </li>
 
                             <li class="nav-item" id="menu-principal-item"><a class="nav-link" href="#">

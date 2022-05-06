@@ -15,7 +15,7 @@
                         <div class="carousel-caption d-none d-md-block">
                             <h1 class="slogan">CONSTRUINDO OPORTUNIDADES ALÉM FRONTEIRAS</h1>
                             <button type="button" class="btn btn-primary btn-lg" id="banner-btn1">COMPRE AGORA</button>
-                            <button type="button" class="btn btn-primary btn-lg" id="banner-btn2">DESCUBRA AS NOSSAS OFERTAS</button>
+                            <a href="/show" class="btn btn-primary btn-lg" id="banner-btn2">DESCUBRA AS NOSSAS OFERTAS</a>
                         </div>
                     </div>
                     <div class="carousel-item" data-bs-interval="2000">
@@ -23,7 +23,7 @@
                     <div class="carousel-caption d-none d-md-block">
                         <h1 class="slogan">CONSTRUINDO OPORTUNIDADES ALÉM FRONTEIRAS</h1>
                             <button type="button" class="btn btn-primary btn-lg" id="banner-btn1">COMPRE AGORA</button>
-                            <button type="button" class="btn btn-primary btn-lg" id="banner-btn2">DESCUBRA AS NOSSAS OFERTAS</button>
+                            <a href="/show" class="btn btn-primary btn-lg" id="banner-btn2">DESCUBRA AS NOSSAS OFERTAS</a>
                     </div>
                     </div>
                     <div class="carousel-item">
@@ -31,7 +31,7 @@
                     <div class="carousel-caption d-none d-md-block">
                     <h1 class="slogan">CONSTRUINDO OPORTUNIDADES ALÉM FRONTEIRAS</h1>
                             <button type="button" class="btn btn-primary btn-lg" id="banner-btn1">COMPRE AGORA</button>
-                            <button type="button" class="btn btn-primary btn-lg" id="banner-btn2">DESCUBRA AS NOSSAS OFERTAS</button>
+                            <a href="/show" class="btn btn-primary btn-lg" id="banner-btn2">DESCUBRA AS NOSSAS OFERTAS</a>
                     </div>
                     </div>
                 </div>

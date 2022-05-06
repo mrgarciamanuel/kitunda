@@ -1,17 +1,18 @@
 <?php
     use Illuminate\Http\Request;
+    use App\Http\Controllers\ProductController;
 ?>
 @extends('layouts.main')
 @section('title','Kitunda - Ver produtos')
 @section('content')
-    <h1>Pesquisa de produtos</h1>
+    <h2 id="products-title">Pesquisa de produtos</h2>
+    <hr id="linha-horizontal-index">
     <!--Container de produtos-->
     <div class="col-md-12" id="product-container">
         <div class="row" id="cards-container">
-        <h1>Pesquisou por : bla bla bla</h1>
             @foreach($products as $product)
             <div class="card col-md-3"> 
-                    <img class="#" src="{{$product['gallery']}}">
+                    <img class="#" src="/img/products/{{$product->gallery}}">
                     <div class="card-body" id="card-body-product">
                         <h4 class="#">{{$product['name']}}</h4>
                         <p>{{$product['description']}}</p>
