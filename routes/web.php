@@ -3,7 +3,9 @@
 use Illuminate\Support\Facades\Route;
 //importar o controler de productos
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\FormController;
+use App\Http\Controllers\FormController; 
+Use App\Http\Controllers\UserController;
+use App\Http\Controllers\DeliveryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -59,7 +61,7 @@ Route::post('quick_add_to_cart',
 
 //rota que permite listar os produtos no carrinho de compras
 Route::get('cartlist', 
-[ProductController::class, 'cartList']);
+[ProductController::class, 'cartList'])->middleware('auth');
 
 //rota que permite listar os produtos nos favoritos de um utilizador
 Route::get('favolist', 
@@ -88,14 +90,31 @@ Route::delete('/products/{id}', [ProductController::class,'destroy']);
 //rota que permite contacto
 Route::get('/contact',[FormController::class,'contact']);
 
-Route::post('/contact', 
-[FormController::class, 'store']);
+//rota que permite ter acesso a 
+//Route::post('/contact', 
+//[FormController::class, 'store']);
+
+//rota que permite ter acesso a página de delivery
+Route::get('delivery',[DeliveryController::class,'delivery'])->middleware('auth');
+
+//rota que permite adicionar dados envio de um pedido
+Route::post('/add_delivery_info',[DeliveryController::class,'addDeliveryInfo'])->middleware('auth');
+
 
 //rota criada automaticamente pelo livewire
 //está será reponsável por requerir a autenticação do utilizador 
 //antes de entrar na sua dashboard
 //o middleware é um mecanismo utilizado filtrar os pedidos http, interage com
 //os pedidos antes de chegar aos controllers
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+/*Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
-})->name('dashboard');
+})->name('dashboard');*/
+
+//rota que permite aceder a view de dashboard
+Route::get('/dashboard',[UserController::class, 'dashboard'])->middleware('auth');
+
+//rota que permite ter acesso a view de atualizar dados do utilizador
+Route::get('/edituser/{id}',[UserController::class,'edituser'])->middleware('auth');
+
+//rota que permite atualizar os dados do utilizador
+Route::put('/edituser/{id}', [UserController::class, 'updateUser'])->middleware('auth');

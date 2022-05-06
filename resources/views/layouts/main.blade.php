@@ -105,14 +105,14 @@
                             @endauth
                             <!--caso o utilizador não seja autentiticado-->
                             @guest
-                            <div class="dropdown">
-                                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                            <div class="dropdown" id="dropdown-menu-principal">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                     Acesso
-                                </a>
+                                    </button>
 
-                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                    <li><a class="dropdown-item" href="/login">Login</a></li>
-                                    <li><a class="dropdown-item" href="/register">Registar</a></li>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink" id="dropdown-1">
+                                    <li><a class="dropdown-item" id="dropdown-2-items" href="/login">Login</a></li>
+                                    <li><a class="dropdown-item" id="dropdown-2-items" href="/register">Registar</a></li>
                                     
                                 </ul>
                             </div>

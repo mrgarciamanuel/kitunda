@@ -12,6 +12,7 @@ use App\Models\Favorito;
 use App\Models\Order;
 
 
+
 class ProductController extends Controller
 {
     //Estas funções são chamadas pelas Rotas em web.php
@@ -25,6 +26,8 @@ class ProductController extends Controller
         return view ("welcome",['products'=>$products]);
         
     }
+
+    
 
     //função para criação de produtos
     public function create(){

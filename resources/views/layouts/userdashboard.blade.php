@@ -68,8 +68,7 @@
                                         <span class="visually-hidden">Toggle Dropdown</span>
                                     </button>
                                     <ul class="dropdown-menu" id="dropdown-2">
-                                        <li><a class="dropdown-item" id="dropdown-2-items" href="#">Action</a></li>
-                                        <li><a class="dropdown-item" id="dropdown-2-items" href="#" >Another action</a></li>
+                                        
                                         <li><hr class="dropdown-divider"></li>
                                         <li class="nav-item">
                                             <form action="/logout" method="POST">

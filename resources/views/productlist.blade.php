@@ -20,20 +20,20 @@
     <tbody>
     @foreach($products as $product)
         <tr>
-        <td>
-            <div class="d-flex align-items-center">
-            <img
-                src="/img/products/{{$product->gallery}}"
-                alt=""
-                style="width: 45px; height: 45px"
-                class="rounded-circle"
-                />
-            <div class="ms-3">
-                <p class="fw-bold mb-1">{{$product->name}}</p>
-                <!--<p class="text-muted mb-0">{{$product->description}}</p>-->
-            </div>
-            </div>
-        </td>
+            <td>
+                <div class="d-flex align-items-center">
+                    <img
+                        src="/img/products/{{$product->gallery}}"
+                        alt=""
+                        style="width: 45px; height: 45px"
+                        class="rounded-circle"
+                        />
+                    <div class="ms-3">
+                        <p class="fw-bold mb-1">{{$product->name}}</p>
+                        <!--<p class="text-muted mb-0">{{$product->description}}</p>-->
+                    </div>
+                </div>
+            </td>
         
         <td>
             <p>{{$product->price}}</p>

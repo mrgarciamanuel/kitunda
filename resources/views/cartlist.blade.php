@@ -18,7 +18,7 @@
 
 <!-- caso o carrinho estiver vazio-->
 @if($total==0)
-    <h2>Seu carrinho de compras está vázio, <a href="/show">clique aqui</a> para ver a nossa ementa</h2>
+    <h4 id="products-title">Seu carrinho de compras está vázio, <a href="/show">clique aqui</a> para ver a nossa ementa</h4>
 @else
 <center>
     <div class="carousel-inner">
