@@ -1,3 +1,16 @@
+<?php
+    use App\Http\Controllers\ProductController;
+    use Illuminate\Support\Facades\Auth;
+    //se o utilizador não estiver autenticado, 
+    //o carrinho estará sempre zerado 
+    $totalShoped = 0;
+
+    //se o utilizador estiver logado, será exibido o
+    //número de produtos no seu carrinho
+    if ($user = auth()->user()){
+        $totalShoped = ProductController::OrderItem();
+    }
+?>
 @extends('layouts.userdashboard')
 @section('title','Kitunda - Carrinho de compras')
 @section('content')
@@ -5,7 +18,15 @@
 <hr id="linha-horizontal-index">
 
 <div id="corpo">
+    
     <div id="interface">
+
+    <!-- Caso o utilizador não tenha efetuado ainda nenhuma compra no sistema -->
+    @if($totalShoped == 0)
+        <center><img src="/img/user_no_photo_.png" class="img-fluid" id="no-user-photo"></center>
+        <h4 id="products-title">Ainda não efetuou nenhuma compra no Kitunda, Vá até a <a href="/show" id="links">nossa loja</a> e efetue a sua primeira compra</h4>
+    @else
+    
         <table class="table">
             <thead class="bg-light">
                 <tr>
@@ -47,13 +68,14 @@
                 </td>
 
                 <td>
-                    <a href="#">Seguir envio!</a>
+                    <a href="#" id="links">Seguir envio!</a>
                 </td>
             </tr>
             
             @endforeach
         </tbody> 
-        </table>     
+        </table>
+    @endif     
     </div>
     <div id="lateral">
         <img src="/img/manwitdmobile.jpg" class="rounded mx-auto d-block" alt="...">

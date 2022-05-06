@@ -39,7 +39,7 @@
                     <label class="form-label">Descrição:</label>
                     <input type="text" name="description" id="form4Example2" class="form-control" placeholder="Descrição"><br>
 
-                    <input type="submit" class="btn btn-primary btn-block mb-4" id="btn-normal1" value="Criar">
+                    <input type="submit" class="btn btn-primary btn-block mb-4" id="btn-normal1" value="Criar produto">
                 </div>
             </form>
         </div>

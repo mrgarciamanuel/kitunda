@@ -124,6 +124,14 @@ class ProductController extends Controller
 
     }
 
+    //função responável por contabilizar as compras que um cliente já fez na loja
+    static function OrderItem(){
+        $user = auth()->user();
+        $userId = $user->id;
+
+        return Order::where('user_id', $userId)->count();
+    }
+
     //função responável por ver a lista de produtos no carrinho de determinado cliente
     public function cartList(){
         $user = auth()->user();//verificar autentificação do utilizador
