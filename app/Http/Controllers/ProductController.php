@@ -181,7 +181,7 @@ class ProductController extends Controller
 
             Cart::where('user_id',$userId)->delete();//esvaziando o carrinho depois de afectuada compra
         }
-        return redirect("/");
+        return redirect("/delivery");
     }
     
     //rota que permite mostrar as compras feitas por um utilizador

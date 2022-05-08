@@ -56,7 +56,7 @@
     <input type="radio" value="cash" name="payment"><span>Mastercard</span><br>
 
   </div>
-  <button type="submit" class="btn btn-default">Finalizar compra</button>
+  <button type="submit" class="btn btn-primary" id="btn-normal1">Finalizar compra</button><br><br>
 </form>
 </div>
 @endsection

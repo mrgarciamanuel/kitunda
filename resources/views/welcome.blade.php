@@ -14,7 +14,7 @@
                         <img src="/img/8.jpg" class="d-block1 w-100" alt="...">
                         <div class="carousel-caption d-none d-md-block">
                             <h1 class="slogan">CONSTRUINDO OPORTUNIDADES ALÉM FRONTEIRAS</h1>
-                            <button type="button" class="btn btn-primary btn-lg" id="banner-btn1">COMPRE AGORA</button>
+                            <a href="/category" class="btn btn-primary btn-lg" id="banner-btn1">COMPRE AGORA</a>
                             <a href="/show" class="btn btn-primary btn-lg" id="banner-btn2">DESCUBRA AS NOSSAS OFERTAS</a>
                         </div>
                     </div>

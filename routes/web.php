@@ -6,6 +6,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\FormController; 
 Use App\Http\Controllers\UserController;
 use App\Http\Controllers\DeliveryController;
+use App\Http\Controllers\CategoryController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -100,6 +101,8 @@ Route::get('delivery',[DeliveryController::class,'delivery'])->middleware('auth'
 //rota que permite adicionar dados envio de um pedido
 Route::post('/add_delivery_info',[DeliveryController::class,'addDeliveryInfo'])->middleware('auth');
 
+//rota que permite ter acesso aos delivers de um cliente
+Route::get('/delivers',[DeliveryController::class,'showDelivers'])->middleware('auth');
 
 //rota criada automaticamente pelo livewire
 //está será reponsável por requerir a autenticação do utilizador 
@@ -109,6 +112,12 @@ Route::post('/add_delivery_info',[DeliveryController::class,'addDeliveryInfo'])-
 /*Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');*/
+
+//rota que permite ter acesso a página de delivery
+Route::get('category',[CategoryController::class,'category'])->middleware('auth');
+
+//Rota que permite a apresentação de produtos 
+Route::get('/category/{id}', [CategoryController::class, 'category_products']);
 
 //rota que permite aceder a view de dashboard
 Route::get('/dashboard',[UserController::class, 'dashboard'])->middleware('auth');

@@ -418,3 +418,8 @@
 #links{
     text-decoration: none;
 }
+
+#delivery-img{
+    width: 500px;
+    height: 500px;
+}

@@ -37,15 +37,12 @@
                     <th>Dados de envio</th>
                 </tr>
             </thead>
-        
-
         <tbody>
             @foreach($orders as $pedido)
             <tr>
                 <td>
                     <p>{{$pedido->id}}</p>
                 </td>
-
                 <td>
                     <div class="d-flex align-items-center">
                         <img
@@ -66,21 +63,19 @@
                 <td>
                     <p>{{$pedido->payment_method}}</p>
                 </td>
-
                 <td>
                     <a href="#" id="links">Seguir envio!</a>
                 </td>
             </tr>
-            
             @endforeach
         </tbody> 
         </table>
     @endif     
     </div>
     <div id="lateral">
-        <img src="/img/manwitdmobile.jpg" class="rounded mx-auto d-block" alt="...">
-        <h2 id="products-title">Seu histórico de compras no Kitunda!</h2>
-        <hr id="linha-horizontal-index">
+        <img src="/img/manwitdmobile.jpg" class="rounded mx-auto d-block" alt="...">   
     </div>
 </div>
+<h2 id="products-title">Seu histórico de compras no Kitunda!</h2>
+<hr id="linha-horizontal-index">
 @endsection

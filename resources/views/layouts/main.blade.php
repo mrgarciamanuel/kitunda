@@ -62,14 +62,6 @@
                                 <a class="nav-link" href="/show">Produtos</a>
                             </li>
 
-                            <li class="nav-item" id="menu-principal-item"><a class="nav-link" href="#">
-                                Como comprar</a>
-                            </li>
-
-                            <li class="nav-item" id="menu-principal-item"><a class="nav-link" href="#">
-                                Blog</a>
-                            </li>
-
                             <li class="nav-item" id="menu-principal-item"><a class="nav-link" href="contact">
                                 Contacte-nos</a>
                             </li>
@@ -82,8 +74,13 @@
                             <ion-icon name="heart-outline"></ion-icon></a>
                             </li>
 
-                            <li class="nav-item"><a class="nav-link" id="menu-principal-item" href="/cartlist"><ion-icon name="cart-outline" size="large"></ion-icon>{{$total}}</a>
-                            </li> 
+                            <li class="nav-item">
+                                <a class="nav-link" id="menu-principal-item" href="/cartlist">
+                                    <ion-icon name="cart-outline" size="large">
+                                    </ion-icon>{{$total}}
+                                </a>
+                            </li>                   
+
                             <!--caso o utilizador seja autentiticado no sistema-->
                             @auth
                                 <div class="dropdown" id="dropdown-menu-principal">
