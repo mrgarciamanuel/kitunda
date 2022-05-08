@@ -58,9 +58,18 @@
                                 Página inicial</a>
                             </li>
 
-                            <li class="nav-item" id="menu-principal-item">
-                                <a class="nav-link" href="/show">Produtos</a>
-                            </li>
+
+                            <div class="dropdown" id="dropdown-menu-principal-">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonCat" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Produtos
+                                    </button>
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink" id="dropdown-1">
+                                    @foreach($categories as $category)
+                                        <li><a class="dropdown-item" id="dropdown-2-items" href="category/{{$category['id']}}">{{$category->name}}</a></li>
+                                    @endforeach    
+                                    
+                                </ul>
+                            </div>
 
                             <li class="nav-item" id="menu-principal-item"><a class="nav-link" href="contact">
                                 Contacte-nos</a>
@@ -149,11 +158,10 @@
                         <div class="card-body">
                             <h4 class="card-title">Links úteis</h4>
                             <h6 class="card-item"><a href="/">Página inicial</a></h6>
-                            <h6 class="card-item"><a href="#">Blog</a></h6>
-                            <h6 class="card-item"><a href="#">Sobre</a></h6>
-                            <h6 class="card-item"><a href="dasboard">Conta</a></h6>
+                            <h6 class="card-item"><a href="/about">Sobre</a></h6>
+                            <h6 class="card-item"><a href="/dashboard">Conta</a></h6>
                             <h6 class="card-item"><a href="cartlist">Saco de compras</a></h6>
-                            <h6 class="card-item"><a href="contact">Conta-tos</a></h6>
+                            <h6 class="card-item"><a href="/contact">Contate-nos</a></h6>
                         </div>
                     </div>
                 </div>
@@ -167,7 +175,7 @@
                             <h6 class="card-item"><a href="#">Tuberculos</a></h6>
                             <h6 class="card-item"><a href="#">Frutas</a></h6>
                             <h6 class="card-item"><a href="#">Legumes</a></h6>
-                            <br><a href="/products/show" class="btn btn-primary" id="verBtn">Ver produtos</a>
+                            <br><a href="/show" class="btn btn-primary" id="verBtn">Ver produtos</a>
                         </div>
                     </div>
                 </div>
@@ -178,7 +186,7 @@
                             <h6 class="card-item"><a href="#">Tecnologia agricola</a></h6>
                             <h6 class="card-item"><a href="#">Fitofarmacêuticos</a></h6>
                             <h6 class="card-item"><a href="#">Sementes</a></h6>
-                            <br><a href="/products/show" class="btn btn-primary" id="verBtn">Ver produtos</a>
+                            <br><a href="/show" class="btn btn-primary" id="verBtn">Ver produtos</a>
                         </div>
                     </div>
                 </div>

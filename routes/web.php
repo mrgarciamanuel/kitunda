@@ -37,7 +37,7 @@ Route::get('/detail/{id}', [ProductController::class, 'detail']);
 //Rota que permitr aceder aos detalhes de cada produto 
 Route::get('/show', [ProductController::class, 'show']);
 
-//Rota que permitr aceder a página de contactos 
+//Rota que permitr aceder a página sobre nós 
 Route::get('/about', [ProductController::class, 'about']);
 
 //rota para pesquisa de produtos
@@ -88,7 +88,7 @@ Route::get('/productlist', [ProductController::class, 'productlist']);
 //rota que permite deletar produtos
 Route::delete('/products/{id}', [ProductController::class,'destroy']);
 
-//rota que permite contacto
+//rota que permite aceder a página de contacto
 Route::get('/contact',[FormController::class,'contact']);
 
 //rota que permite ter acesso a 

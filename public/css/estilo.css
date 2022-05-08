@@ -89,6 +89,17 @@
     background-color: #2F7A81;
 }
 
+#dropdownMenuButtonCat{
+    background-color: #F95008;
+    border-style: hidden;
+    transition: transform .3s;
+    font-size: 18px;
+}
+
+#dropdownMenuButtonCat:hover{
+    transform:scale(1.1);
+}
+
 #dropdown-1{
     background-color: #2F7A81;
 }

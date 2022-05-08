@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\Category;
 use App\Models\Form;
 use Illuminate\Http\Request;
 
@@ -9,6 +10,9 @@ class FormController extends Controller
     //
     //função que permite guardar os formulários feitos no site
     public function store(Request $pedido){
+        //chamando as categoias para que possam ser exibidas no menu
+        $categories = Category::all();
+
         $form = new Form;
 
         $form->name = $pedido->name;
@@ -20,11 +24,13 @@ class FormController extends Controller
 
         $form->save();
 
-        return redirect ('/');
+        return redirect ('/',['categories'=>$categories]);
     }
 	
 	//função que permite ter acesso a página de contactos
     public function contact(){
-        return view ('contact');
+        //chamando as categoias para que possam ser exibidas no menu
+        $categories = Category::all();
+        return view ('contact',['categories'=>$categories]);
     }
 }

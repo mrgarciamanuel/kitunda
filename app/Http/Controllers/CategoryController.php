@@ -19,6 +19,7 @@ class CategoryController extends Controller
     //A variavél/objeto 'products' criado dentro desta função vai receber a função que faz a relação entre as tabelas como foi definido nos Models
     public function category_products($id){
         $products = Category::find($id)->products()->get();
-        return view ('category_prod',['products'=>$products]);
+        $categories = Category::all();
+        return view ('category_prod',['products'=>$products], ['categories'=>$categories]);
     }
 }

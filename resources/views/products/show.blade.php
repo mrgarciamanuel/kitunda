@@ -15,10 +15,6 @@
                 <div class="carousel-item {{$product['id']==1?'active':''}}">
                 <a href="detail/{{$product['id']}}">
                 <img class=""  src="/img/products/{{$product->gallery}}" id="img-carousel" alt="{{$product['nome']}}">
-                    <!--<div class="carousel-caption d-none d-md-block">
-                        <h3 id="product-title-show">{{$product['name']}}</h3>
-                        <h4 id="product-description-show">{{$product['description']}}</h4>
-                    </div>-->
                 </a>
                 </div>
             @endforeach

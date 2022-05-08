@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Cart;
 use App\Models\Favorito;
 use App\Models\Order;
+use App\Models\Category;
 
 
 
@@ -22,8 +23,11 @@ class ProductController extends Controller
         //$products = Product::all();
         $products = Product::with('category')->get();
 
-        //mostrar todos produtos que colocamos na variável products
-        return view ("welcome",['products'=>$products]);
+        //chamando as categoias para que possam ser exibidas no menu
+        $categories = Category::all();
+
+        //Retornar a view e mostrar todos produtos que colocamos na variável/objeto products e também as categorias 
+        return view ("welcome",['products'=>$products],['categories'=>$categories]);
         
     }
 
@@ -36,60 +40,79 @@ class ProductController extends Controller
 
     //função para visualização de produtos
     public function show(){
-        //chamando todos produtos para a view
-        //$products = Product::all();
-
-        //mostrar todos produtos que colocamos na variável products
-        //return view ("products.show",['products'=>$products]);
+        //chamando as categoias para que possam ser exibidas no menu
+        $categories = Category::all();
 
         $product = Product::all();//'category' faz referência ao nome da relação criada no Model
-        return view('products.show', ['products'=>$product]);
+        return view('products.show', ['products'=>$product],['categories'=>$categories]);
         //return view('products.show',['products'=>$products]);
     }
 
     //função que permite aceder aos detalhes de um produto
     function detail($id){
+
+        //chamando as categoias para que possam ser exibidas no menu
+        $categories = Category::all();
+
         $product = Product::find($id);
-        return view ('detail',['product'=>$product]);
+        return view ('detail',['product'=>$product],['categories'=>$categories]);
     }
 
     //função para pesquisa de produtos
     //request foi importado em cima
     function search(Request $pedido){
-        $pesquisado =  request('query');
+
+        //chamando as categoias para que possam ser exibidas no menu
+        $categories = Category::all();
+
         $product=Product::
         where('name','like','%'.$pedido->
         input('query').'%')->get();
 
-        return view('search',['products'=>$product]);
+        return view('search',['products'=>$product],['categories'=>$categories]);
     }
 
     public function about(){
-        return view('about');
+        //chamando as categoias para que possam ser exibidas no menu
+        $categories = Category::all();
+
+        return view('about',['categories'=>$categories]);
     }
 
     //função responsável por adicionar produtos no carrinho
     function addToCart(Request $pedido){
+
+        //chamando as categoias para que possam ser exibidas no menu
+        $categories = Category::all();
+
         $cart = new Cart;
         $user = auth()->user();
         $cart->user_id = $user->id;
         $cart->product_id = $pedido->product_id;
         $cart->save();
         $cart_id=$cart->id;
-        return redirect('show');
+        return redirect('show',['categories'=>$categories]);
     }
 
     function addToFavo(Request $pedido){
+
+        //chamando as categoias para que possam ser exibidas no menu
+        $categories = Category::all();
+
         
         $favoritos = new Favorito;
         $user = auth()->user();
         $favoritos->user_id = $user->id;
         $favoritos->product_id = $pedido->product_id;
         $favoritos->save();
-        return redirect('show');
+        return redirect('show',['categories'=>$categories]);
     }
 
     public function favoList(){
+        //chamando as categoias para que possam ser exibidas no menu
+        $categories = Category::all();
+
+
         //lista de produtos no carrinho com innerjoin
         $user = auth()->user();//verificar autentificação do utilizador
         $userId = $user->id;//variavel userId recebe o identificador do
@@ -98,7 +121,7 @@ class ProductController extends Controller
         ->where('favoritos.user_id',$userId)
         ->select('products.*','favoritos.id as cart_id')
         ->get();
-        return view ('favolist',['products'=>$products]);
+        return view ('favolist',['products'=>$products],['categories'=>$categories]);
     }
 
     //função responsável pelas compras rápidas no sistema
@@ -114,6 +137,7 @@ class ProductController extends Controller
 
     //função responsável por contabilizar os produtos no carrinho de determinado cliente
     static function cartItem(){
+
         $user = auth()->user();//verificar autentificação do utilizador
         $userId = $user->id;//variavel userId recebe o identificador do utilizador
         //retornar o total de vezes de objetos 
@@ -132,6 +156,9 @@ class ProductController extends Controller
 
     //função responável por ver a lista de produtos no carrinho de determinado cliente
     public function cartList(){
+        //chamando as categoias para que possam ser exibidas no menu
+        $categories = Category::all();
+
         $user = auth()->user();//verificar autentificação do utilizador
         $userId = $user->id;//variavel userId recebe o identificador do 
         $products = DB::table('cart')
@@ -139,7 +166,7 @@ class ProductController extends Controller
         ->where('cart.user_id',$userId)
         ->select('products.*','cart.id as cart_id')
         ->get();
-        return view('cartlist',['products'=>$products]);
+        return view('cartlist',['products'=>$products],['categories'=>$categories]);
     }
 
     //função que permite remover produtos do carrinho de compras
@@ -151,6 +178,11 @@ class ProductController extends Controller
 
     //função que permite efetuar compras no sistema
     public function orderNow(){
+        
+         //chamando as categoias para que possam ser exibidas no menu
+         $categories = Category::all();
+
+
         $user = auth()->user();//verificar autentificação do utilizador
         $userId = $user->id;//variavel userId recebe o identificador do
         
@@ -159,11 +191,14 @@ class ProductController extends Controller
         ->where('cart.user_id',$userId)
         ->sum('products.price');//fazer a soma do preço de todos produtos no carrinho
         
-        return view ('ordernow',['totPriceCarrinho'=>$totPriceCarrinho]);
+        return view ('ordernow',['totPriceCarrinho'=>$totPriceCarrinho], ['categories'=>$categories]);
     }
 
     //função que permite finalizar compra
     public function orderPlace(Request $pedido){
+        //chamando as categoias para que possam ser exibidas no menu
+        $categories = Category::all();
+
         $user = auth()->user();//verificar autentificação do utilizador
         $userId = $user->id;//variavel userId recebe o identificador do
         $allCart = Cart::where('user_id',$userId)->get(); //pegando de novo o carrinho cujo id_user seja igual ao id do utilizador
@@ -181,12 +216,13 @@ class ProductController extends Controller
 
             Cart::where('user_id',$userId)->delete();//esvaziando o carrinho depois de afectuada compra
         }
-        return redirect("/delivery");
+        return redirect("/delivery", ['categories'=>$categories]);
     }
     
     //rota que permite mostrar as compras feitas por um utilizador
     //para tal, é necessário fazer join entre as tablelas orders e produtos
     public function myOrders(){
+        
         $user = auth()->user();//verificar autentificação do utilizador
         $userId = $user->id;//variavel userId recebe o identificador do
        $orders = DB::table('orders')
