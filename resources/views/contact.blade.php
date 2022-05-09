@@ -16,7 +16,7 @@
                         <div class="col-md-8">
                             <div class="card-body">
                                 <h5 class="card-title">KITUNDA</h5>
-                                <p class="card-text">Kitunda é projeto de e-commerce voltado a venda de produtos agroalimentares, desenvolvido por estudantes da Universidade Católica Portuguesa de Braga</p>
+                                <p class="card-text">Kitunda é projeto novo voltado a venda de produtos agroalimentares, desenvolvido por estudantes da Universidade Católica Portuguesa de Braga</p>
 
                                 <h6>Entre em contacto com a nossa equipa</h6>
                                 <p><ion-icon name="call-outline"></ion-icon>+251 923 123 456</p>

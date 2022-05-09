@@ -32,7 +32,7 @@
           
           <button class="btn btn-primary" id="btn-normal">Adicionar no carrinho</button><br>
         </form>
-        <button class="btn btn-primary" id="btn-normal2">Comprar agora</button>
+        <button class="btn btn-primary" id="btn-normal2" hidden>Comprar agora</button>
         <br><br><br><a href="/show">Voltar</a>
             
     </div>

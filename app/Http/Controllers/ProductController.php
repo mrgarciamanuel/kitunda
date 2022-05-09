@@ -105,7 +105,7 @@ class ProductController extends Controller
         $favoritos->user_id = $user->id;
         $favoritos->product_id = $pedido->product_id;
         $favoritos->save();
-        return redirect('show',['categories'=>$categories]);
+        return redirect('show');
     }
 
     public function favoList(){
