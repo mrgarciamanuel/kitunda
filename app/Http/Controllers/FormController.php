@@ -24,7 +24,7 @@ class FormController extends Controller
 
         $form->save();
 
-        return redirect ('/',['categories'=>$categories]);
+        return view ('welcome',['categories'=>$categories])->with('msg','Producto adicionado na loja!');
     }
 	
 	//função que permite ter acesso a página de contactos

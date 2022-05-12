@@ -92,8 +92,7 @@ Route::delete('/products/{id}', [ProductController::class,'destroy']);
 Route::get('/contact',[FormController::class,'contact']);
 
 //rota que permite ter acesso a 
-//Route::post('/contact', 
-//[FormController::class, 'store']);
+Route::post('/contact', [FormController::class, 'store']);
 
 //rota que permite ter acesso a página de delivery
 Route::get('delivery',[DeliveryController::class,'delivery'])->middleware('auth');
@@ -114,7 +113,7 @@ Route::get('/delivers',[DeliveryController::class,'showDelivers'])->middleware('
 })->name('dashboard');*/
 
 //rota que permite ter acesso a página de delivery
-Route::get('category',[CategoryController::class,'category'])->middleware('auth');
+Route::get('category',[CategoryController::class,'category']);
 
 //Rota que permite a apresentação de produtos 
 Route::get('/category/{id}', [CategoryController::class, 'category_products']);

@@ -34,8 +34,6 @@
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Roboto+Condensed:wght@400;700&family=Roboto" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Roboto" rel="stylesheet">
         
-
-
     </head>
     <body>
 
@@ -57,7 +55,6 @@
                             <li class="nav-item" id="menu-principal-item"><a class="nav-link" href="/">
                                 Página inicial</a>
                             </li>
-
 
                             <div class="dropdown" id="dropdown-menu-principal-">
                             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonCat" data-bs-toggle="dropdown" aria-expanded="false">
@@ -101,7 +98,7 @@
                                         <li class="nav-item" id="dropdown-2-items">
                                             <form action="/logout" method="POST">
                                                 @csrf
-                                                <li><a class="nav-link" href="/logout" 
+                                                <li><a class="nav-link" id="dropdown-1-items" href="/logout" 
                                                 onclick="event.preventDefault();this.closest('form').submit();">
                                             Sair</a></li>
                                             </form>
@@ -122,22 +119,16 @@
                                     
                                 </ul>
                             </div>
-                            @endguest
-
-                            
+                            @endguest                          
                         </ul>
-
-                        
                     </div>
                 </div>
             </nav>
 
-        </header>
-           
+        </header>          
         
     <!-- Em content, é onde será alocado todo o conteúdo de cada uma das páginas do nosso site-->
         
-
     <main>
         <div class="container-fluid">
             <div class="row">
