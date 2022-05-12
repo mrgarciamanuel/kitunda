@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Models\Category;
+use App\Models\Product;
+use App\Http\Controllers\ProductController;
 
 use Illuminate\Http\Request;
 
@@ -9,9 +11,9 @@ class CategoryController extends Controller
 {    
     //função responsável por mostrar as categorias de produtos no sistema 
     public function category(){
-
+        $products = Product::with('category')->get(); 
         $categories = Category::all();
-        return view('category',['categories'=>$categories]);
+        return view('category',['categories'=>$categories],['products'=>$products]);
     }
 
     //função responsável por mostrar os produtos que estão em uma categoria

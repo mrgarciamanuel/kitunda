@@ -329,6 +329,35 @@
 }
 /* Fim formatação da flash sms*/
 
+/*formatação dos elementos da div interface e da lateral de category*/
+#category-left-side{
+    display: block;
+    width: 20%;
+    float: left;
+    border-right: 1px solid #808080;
+}
+
+#cat-title{
+    margin: 50px 0px 0px 0px; 
+}
+
+#category-right-side{
+    display: block;
+    width: 80%;
+    float: right;
+}
+
+#category-container .card{
+    flex: 1 1 24%;
+    max-width: 20%;
+    border-radius: 10px;
+    padding: 0;
+    margin: .5px;
+    margin-bottom: 20px;
+}
+/*Fim*/
+
+
 /*Formatação dos elementos div interface e elementos da lateral da view contacto*/
 #interface{
     display: block;

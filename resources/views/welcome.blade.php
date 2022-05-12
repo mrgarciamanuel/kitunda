@@ -61,7 +61,6 @@
                         <h6>{{$product->category->name}}</h6>
                         <p>{{$product['description']}}</p>
                         <p>{{$product['price']}},00 AOA </p>
-                        
 
                         <form action="/add_to_favo" method="POST">
                             @csrf

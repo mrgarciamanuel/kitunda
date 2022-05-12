@@ -2,11 +2,31 @@
 @section('title','Kitunda')
 @section('content')
 
-<h1 id="products-title">Categoria de produtos oferecidos pelo Kitunda</h1>
-<hr id="linha-horizontal-index">
+<h2 id="cat-title">Categorias</h2>
+<div>
+    <div id="category-left-side">
+        @foreach($categories as $category)
+            <h3><a href="category/{{$category['id']}}">{{$category->name}}</a></h3>
+        @endforeach    
+    </div>
 
-    @foreach($categories as $category)
-        <a href="category/{{$category['id']}}"><p>{{$category->name}}</p></a>
-        <h4>É um nome comum para uma grande variedade de sementes de plantas de alguns gêneros da família Fabaceae. Proporciona nutrientes essenciais como proteínas, ferro, cálcio, vitaminas (principalmente do complexo B), carboidratos e fibras.</h4>
-    @endforeach
+
+    <div id="category-right-side" id="category-container">
+        <h1 id="products-title">Explore os nossos produtos</h1>
+        <hr id="linha-horizontal-index">
+            <div class="row">
+            @foreach($products as $product)
+                <div class="card col-md-4" >             
+                        <div class="card-body">
+                            <h5 class="card-title">{{$product['name']}}</h5>
+                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+
+                </div>
+            @endforeach
+            </div>
+            
+    </div>
+</div>
 @endsection
