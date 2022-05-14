@@ -23,8 +23,7 @@ class FormController extends Controller
         $form->sms = $pedido->sms;
 
         $form->save();
-
-        return view ('welcome',['categories'=>$categories])->with('msg','Producto adicionado na loja!');
+        return view ('contact',['categories'=>$categories])->with('msg','A sua mensagem foi enviada com sucesso!');
     }
 	
 	//função que permite ter acesso a página de contactos

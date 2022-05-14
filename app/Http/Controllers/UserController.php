@@ -17,12 +17,11 @@ class UserController extends Controller
     public function edituser(){
         $user = auth()->user();
         return view ('edituser',['user'=>$user]);
-
     }
 
     public function updateUser(Request $pedido){
         User::findOrFail($pedido->id)->update($pedido->all());
-        return redirect('dashboard');
+        return redirect('dashboard')->with('msg','Dados do utilizador foram atualizados!');
     }
 
 }

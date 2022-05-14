@@ -355,6 +355,20 @@
     margin: .5px;
     margin-bottom: 20px;
 }
+
+#category-btn{
+    width: 100px;
+    background-color: #2F7A81;
+    color: white;
+}
+
+#category-items{
+    text-decoration: none;
+}
+
+#search-cat{
+    width: 130px;
+}
 /*Fim*/
 
 

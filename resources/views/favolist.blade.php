@@ -10,7 +10,6 @@
             <thead class="bg-light">
                 <tr>
                     <th>Name</th>
-                    <th>Categoria</th>
                     <th>Ação</th>
                 </tr>
             </thead>
@@ -30,10 +29,6 @@
                                         
                         </div>
                     </td>
-                    <td id="categoria dos produtos">
-                        <p>{{$product->category_id}}</p>
-                    </td>
-
                     <td id="ação dos produtos">
                         <a class="btn btn-primary" id="btn-normal" href="detail/{{$product->id}}">Ver detalhes</a><br><br>
                     </td>    
@@ -43,5 +38,4 @@
         </table>
     </center>
 </div>
-
 @endsection

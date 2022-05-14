@@ -17,7 +17,7 @@ use App\Models\Category;
 class ProductController extends Controller
 {
     //Estas funções são chamadas pelas Rotas em web.php
-    //função responsável por mostrar a página inicial do site 
+    //função responsável por mostrar a página inicial do site, a rota /
     public function index(){
         //chamando todos produtos para a view
         //$products = Product::all();
@@ -28,10 +28,7 @@ class ProductController extends Controller
 
         //Retornar a view e mostrar todos produtos que colocamos na variável/objeto products e também as categorias 
         return view ("welcome",['products'=>$products],['categories'=>$categories]);
-        
     }
-
-    
 
     //função para criação de produtos
     public function create(){
@@ -59,7 +56,9 @@ class ProductController extends Controller
     }
 
     //função para pesquisa de produtos
-    //request foi importado em cima
+    //O obecto request foi importado em cima
+    //é responsavel por pegar os dados inseridos pelo utilizador e 
+    //comunicar com a base de dados
     function search(Request $pedido){
 
         //chamando as categoias para que possam ser exibidas no menu
@@ -72,6 +71,7 @@ class ProductController extends Controller
         return view('search',['products'=>$product],['categories'=>$categories]);
     }
 
+    //função responsável por mostrar a página about
     public function about(){
         //chamando as categoias para que possam ser exibidas no menu
         $categories = Category::all();
@@ -94,6 +94,7 @@ class ProductController extends Controller
         return redirect('show',['categories'=>$categories]);
     }
 
+    //função responsável por adicionar produtos lista de favoritos  do utilizador
     function addToFavo(Request $pedido){
 
         //chamando as categoias para que possam ser exibidas no menu
@@ -108,6 +109,7 @@ class ProductController extends Controller
         return redirect('show');
     }
 
+    //função responsável por mostrar os produtos na lista de favoritos de um cliente
     public function favoList(){
         //chamando as categoias para que possam ser exibidas no menu
         $categories = Category::all();
@@ -124,7 +126,7 @@ class ProductController extends Controller
         return view ('favolist',['products'=>$products],['categories'=>$categories]);
     }
 
-    //função responsável pelas compras rápidas no sistema
+    //função responsável por realizar compras rápidas no sistema
     function quickAddToCart(Request $pedido){
         $cart = new Cart;
         $user = auth()->user();
@@ -135,7 +137,7 @@ class ProductController extends Controller
         return ("Produto comprado");
     }
 
-    //função responsável por contabilizar os produtos no carrinho de determinado cliente
+    //função responsável por fazer a contagem dos produtos no carrinho de determinado cliente
     static function cartItem(){
 
         $user = auth()->user();//verificar autentificação do utilizador
@@ -143,7 +145,6 @@ class ProductController extends Controller
         //retornar o total de vezes de objetos 
         //da classe carinho associados a um determinado utilizador
         return Cart::where('user_id',$userId)->count();
-
     }
 
     //função responável por contabilizar as compras que um cliente já fez na loja
@@ -219,7 +220,7 @@ class ProductController extends Controller
         return redirect("/delivery", ['categories'=>$categories]);
     }
     
-    //rota que permite mostrar as compras feitas por um utilizador
+    //Função que permite mostrar as compras feitas por um utilizador
     //para tal, é necessário fazer join entre as tablelas orders e produtos
     public function myOrders(){
         

@@ -19,21 +19,21 @@
                         </div>
                     </div>
                     <div class="carousel-item" data-bs-interval="2000">
-                    <img src="/img/5.1.jpg" class="d-block1 w-100" alt="...">
+                        <img src="/img/5.1.jpg" class="d-block1 w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1 class="slogan">CONSTRUINDO OPORTUNIDADES ALÉM FRONTEIRAS</h1>
+                                <button type="button" class="btn btn-primary btn-lg" id="banner-btn1">COMPRE AGORA</button>
+                                <a href="/show" class="btn btn-primary btn-lg" id="banner-btn2">DESCUBRA AS NOSSAS OFERTAS</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                    <img src="/img/10.1.jpg" class="d-block1 w-100" alt="...">
                     <div class="carousel-caption d-none d-md-block">
                         <h1 class="slogan">CONSTRUINDO OPORTUNIDADES ALÉM FRONTEIRAS</h1>
                             <button type="button" class="btn btn-primary btn-lg" id="banner-btn1">COMPRE AGORA</button>
                             <a href="/show" class="btn btn-primary btn-lg" id="banner-btn2">DESCUBRA AS NOSSAS OFERTAS</a>
                     </div>
-                    </div>
-                    <div class="carousel-item">
-                    <img src="/img/10.1.jpg" class="d-block1 w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                    <h1 class="slogan">CONSTRUINDO OPORTUNIDADES ALÉM FRONTEIRAS</h1>
-                            <button type="button" class="btn btn-primary btn-lg" id="banner-btn1">COMPRE AGORA</button>
-                            <a href="/show" class="btn btn-primary btn-lg" id="banner-btn2">DESCUBRA AS NOSSAS OFERTAS</a>
-                    </div>
-                    </div>
+                </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -75,7 +75,6 @@
                     <form action="/quick_add_to_cart" method="POST">
                         @csrf
                         <input type="hidden" name="product_id" value="{{$product['id']}}">
-
                         <button class="btn btn-primary" id="btn-normal1" hidden>Comprar agora<ion-icon name="cart-outline" size="small"></ion-icon><i class="bi bi-apple"></i></button>
                     </form>
                     
