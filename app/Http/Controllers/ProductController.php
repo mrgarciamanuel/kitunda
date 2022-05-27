@@ -12,8 +12,6 @@ use App\Models\Favorito;
 use App\Models\Order;
 use App\Models\Category;
 
-
-
 class ProductController extends Controller
 {
     //Estas funções são chamadas pelas Rotas em web.php
@@ -81,22 +79,17 @@ class ProductController extends Controller
 
     //função responsável por adicionar produtos no carrinho
     function addToCart(Request $pedido){
-
-        //chamando as categoias para que possam ser exibidas no menu
-        $categories = Category::all();
-
         $cart = new Cart;
         $user = auth()->user();
         $cart->user_id = $user->id;
         $cart->product_id = $pedido->product_id;
         $cart->save();
         $cart_id=$cart->id;
-        return redirect('show',['categories'=>$categories]);
+        return redirect('show');
     }
 
     //função responsável por adicionar produtos lista de favoritos  do utilizador
     function addToFavo(Request $pedido){
-
         //chamando as categoias para que possam ser exibidas no menu
         $categories = Category::all();
 
@@ -174,6 +167,12 @@ class ProductController extends Controller
     public function removeFromCart($id){
         Cart::destroy($id);
         return redirect("/cartlist");
+    }
+
+     //função que permite remover produtos do carrinho de compras
+     public function removeFromFavo($id){
+        Favorito::destroy($id);
+        return redirect("/favolist");
 
     }
 

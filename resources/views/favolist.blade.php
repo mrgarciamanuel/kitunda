@@ -30,7 +30,10 @@
                         </div>
                     </td>
                     <td id="ação dos produtos">
-                        <a class="btn btn-primary" id="btn-normal" href="detail/{{$product->id}}">Ver detalhes</a><br><br>
+                        <a class="btn btn-primary" id="btn-normal" href="detail/{{$product->id}}">Ver detalhes</a>
+
+                        <a href="/remove_from_favo/{{$product->id}}" class="btn btn-danger">Remover</a>             
+                                
                     </td>    
                 </tr>
                 @endforeach

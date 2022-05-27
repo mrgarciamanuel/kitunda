@@ -29,7 +29,7 @@
                         <h6>{{$product->category->name}}</h6>
                         <p>{{$product['description']}}</p>
                         <p>{{$product['price']}},00 AOA </p>
-
+                        
                         <form action="/add_to_favo" method="POST">
                             @csrf
                             <input type="hidden" name="product_id" value="{{$product['id']}}">
@@ -45,7 +45,6 @@
                         <input type="hidden" name="product_id" value="{{$product['id']}}">
                         <button class="btn btn-primary" id="btn-normal1" hidden>Comprar agora<ion-icon name="cart-outline" size="small"></ion-icon><i class="bi bi-apple"></i></button>
                     </form>
-                    
                     </center>
             </div>
                 @endforeach

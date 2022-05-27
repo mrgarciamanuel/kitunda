@@ -99,5 +99,8 @@
   </div>
 
   <div class="embed-responsive embed-responsive-21by9">
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d151115.05821320132!2d13.238711530816289!3d-8.83903104864509!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1a51f15cdc8d2c7d%3A0x850c1c5c5ecc5a92!2sLuanda%2C%20Angola!5e0!3m2!1spt-PT!2spt!4v1633441982100!5m2!1spt-PT!2spt" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" class="ratio ratio-16x9"></iframe></div>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d151115.05821320132!2d13.238711530816289!3d-8.83903104864509!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1a51f15cdc8d2c7d%3A0x850c1c5c5ecc5a92!2sLuanda%2C%20Angola!5e0!3m2!1spt-PT!2spt!4v1633441982100!5m2!1spt-PT!2spt" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" class="ratio ratio-16x9">
+  </iframe>
+</div>
+    
 @endsection

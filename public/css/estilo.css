@@ -144,6 +144,8 @@
     transform:scale(1.4);
 }
 
+
+
 /*FIM Menu*/
 
 
@@ -476,4 +478,10 @@
 #delivery-img{
     width: 500px;
     height: 500px;
+}
+
+
+.map {
+    height: 400px;
+    width: 100%;
 }

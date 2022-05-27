@@ -68,6 +68,10 @@ Route::get('cartlist',
 Route::get('favolist', 
 [ProductController::class, 'favoList'])->middleware('auth');
 
+//rota que permite remover os produtos dos favoritos de um cliente
+Route::get('remove_from_favo/{id}', 
+[ProductController::class, 'removeFromFavo']);
+
 //rota que permite remover os produtos no carrinho de compras
 Route::get('remove_from_cart/{id}', 
 [ProductController::class, 'removeFromCart']);
@@ -126,3 +130,7 @@ Route::get('/edituser/{id}',[UserController::class,'edituser'])->middleware('aut
 
 //rota que permite atualizar os dados do utilizador
 Route::put('/edituser/{id}', [UserController::class, 'updateUser'])->middleware('auth');
+
+Route::get('mapa', function(){
+    return view ('mapa');
+});

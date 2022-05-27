@@ -13,9 +13,9 @@
         <div class="carousel-inner" id="carousel-inner-prod">
             @foreach($products as $product)
                 <div class="carousel-item {{$product['id']==1?'active':''}}">
-                <a href="detail/{{$product['id']}}">
-                <img class=""  src="/img/products/{{$product->gallery}}" id="img-carousel" alt="{{$product['nome']}}">
-                </a>
+                    <a href="detail/{{$product['id']}}">
+                        <img class=""  src="/img/products/{{$product->gallery}}" id="img-carousel" alt="{{$product['nome']}}">
+                    </a>
                 </div>
             @endforeach
         </div>

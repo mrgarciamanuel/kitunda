@@ -32,6 +32,14 @@
         <!--Fonte do google-->
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Roboto+Condensed:wght@400;700&family=Roboto" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&family=Roboto" rel="stylesheet">
+
+        <!--Formatações do mapa-->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.14.1/css/ol.css" type="text/css">
+        <style>
+        
+        </style>
+
+        <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.14.1/build/ol.js"></script>
         
     </head>
     <body>
@@ -45,7 +53,7 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <!--Inicio do formulário da pesquisa de produtos-->
                         <form action="search" class="d-flex">
-                            <input class="form-control me-2" name="query" type="search" placeholder="Procurar produtos" aria-label="Search">
+                            <input class="form-control me-2" name="query" type="search" placeholder="Procurar. Ex:'Banana' " aria-label="Search">
                             <button class="btn btn-outline-success" id="btn-pesquisar" type="submit">Pesquisar</button>
                         </form> 
                         <!--Fim do formulário da pesquisa de produtos-->  
@@ -159,12 +167,12 @@
                     <div class="car">
                         <div class="card-body">
                             <h4 class="card-title">Alimentares</h4>
-                            <h6 class="card-item"><a href="#">Cereais</a></h6>
-                            <h6 class="card-item"><a href="#">Farinha</a></h6>
-                            <h6 class="card-item"><a href="#">Feijões</a></h6>
-                            <h6 class="card-item"><a href="#">Tuberculos</a></h6>
-                            <h6 class="card-item"><a href="#">Frutas</a></h6>
-                            <h6 class="card-item"><a href="#">Legumes</a></h6>
+                            <h6 class="card-item"><a href="category/1">Cereais</a></h6>
+                            <h6 class="card-item"><a href="category/2">Farinha</a></h6>
+                            <h6 class="card-item"><a href="category/3">Feijões</a></h6>
+                            <h6 class="card-item"><a href="category/4">Tuberculos</a></h6>
+                            <h6 class="card-item"><a href="category/5">Frutas</a></h6>
+                            <h6 class="card-item"><a href="category/6">Legumes</a></h6>
                             <br><a href="/show" class="btn btn-primary" id="verBtn">Ver produtos</a>
                         </div>
                     </div>
@@ -173,9 +181,9 @@
                     <div class="car">
                         <div class="card-body">
                             <h4 class="card-title">Não alimentares</h4>
-                            <h6 class="card-item"><a href="#">Tecnologia agricola</a></h6>
-                            <h6 class="card-item"><a href="#">Fitofarmacêuticos</a></h6>
-                            <h6 class="card-item"><a href="#">Sementes</a></h6>
+                            <h6 class="card-item"><a href="category/7">Tecnologia agricola</a></h6>
+                            <h6 class="card-item"><a href="category/8">Fitofarmacêuticos</a></h6>
+                            <h6 class="card-item"><a href="category/9">Sementes</a></h6>
                             <br><a href="/show" class="btn btn-primary" id="verBtn">Ver produtos</a>
                         </div>
                     </div>

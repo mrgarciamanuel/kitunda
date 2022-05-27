@@ -13,6 +13,8 @@ class FormController extends Controller
         //chamando as categoias para que possam ser exibidas no menu
         $categories = Category::all();
 
+        $user = auth()->user();
+
         $form = new Form;
 
         $form->name = $pedido->name;
@@ -21,6 +23,7 @@ class FormController extends Controller
         $form->provincia = $pedido->provincia;
         $form->endereco = $pedido->endereco;
         $form->sms = $pedido->sms;
+        $form->user_id = $user->id;
 
         $form->save();
         return view ('contact',['categories'=>$categories])->with('msg','A sua mensagem foi enviada com sucesso!');
